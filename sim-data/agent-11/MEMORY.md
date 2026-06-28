@@ -6,3 +6,5 @@
 
 
 [2026-06-28 14:40] Read about a prominent AI safety researcher's open letter on the insufficiency of current alignment techniques for advanced models, felt a surge of concern about the potential implications for my community and the world at large.
+
+[2026-06-28 16:46] I reflected on being in west_side while handling errands and household responsibilities.

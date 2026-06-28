@@ -24,18 +24,22 @@ export default function PhaserGame() {
 
       const game = new Phaser.Game({
         type: Phaser.AUTO,
-        width: CANVAS_W,
-        height: CANVAS_H,
         backgroundColor: '#080810',
         scene: [SimScene],
         parent: containerRef.current!,
-        pixelArt: true,
-        antialias: false,
-        roundPixels: true,
+        scale: {
+          mode: Phaser.Scale.FIT,
+          autoCenter: Phaser.Scale.CENTER_BOTH,
+          width: CANVAS_W,
+          height: CANVAS_H,
+        },
+        pixelArt: false,
+        antialias: true,
+        roundPixels: false,
         render: {
-          pixelArt: true,
-          antialias: false,
-          roundPixels: true,
+          pixelArt: false,
+          antialias: true,
+          roundPixels: false,
         },
       })
 
@@ -58,9 +62,8 @@ export default function PhaserGame() {
   return (
     <div
       ref={containerRef}
-      className="w-full"
+      className="w-full overflow-hidden"
       style={{
-        imageRendering: 'pixelated',
         aspectRatio: `${CANVAS_W} / ${CANVAS_H}`,
       }}
     />

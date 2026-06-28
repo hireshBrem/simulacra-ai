@@ -24,9 +24,22 @@ from simulation.state import (
 )
 
 
-def simulation_step(max_agents: int = 4, tick_minutes: int = 5, use_llm: bool = True) -> dict:
+def simulation_step(max_agents: int = 0, tick_minutes: int = 5, use_llm: bool = True) -> dict:
     """
     Advance the persistent SF simulation by one tick.
+
+    max_agents=0 means every Agent gets a turn, matching the Reverie loop.
+    """
+    events = list(iter_simulation_step_events(max_agents=max_agents, tick_minutes=tick_minutes, use_llm=use_llm))
+    return {"state": load_state(), "events": events}
+
+
+def iter_simulation_step_events(max_agents: int = 0, tick_minutes: int = 5, use_llm: bool = True):
+    """
+    Advance one simulation tick and yield events as each Agent finishes.
+
+    This is used by SSE streaming so the frontend can update smoothly instead
+    of waiting for the whole population step to finish.
     """
     state = load_state()
     state["tick_minutes"] = tick_minutes
@@ -34,14 +47,17 @@ def simulation_step(max_agents: int = 4, tick_minutes: int = 5, use_llm: bool = 
     current_time = parse_sim_time(state["current_time"]) + timedelta(minutes=tick_minutes)
     state["current_time"] = format_sim_time(current_time)
     state["step_number"] += 1
+    save_state(state)
 
-    events: list[dict] = [{
+    yield {
         "type": "tick_started",
         "step": state["step_number"],
         "current_time": state["current_time"],
-    }]
+    }
 
-    events.extend(_advance_encounters(state, use_llm=use_llm))
+    for event in _advance_encounters(state, use_llm=use_llm):
+        save_state(state)
+        yield event
 
     for agent_state in _select_active_agents(state, max_agents):
         if agent_state.get("active_encounter_id"):
@@ -52,16 +68,16 @@ def simulation_step(max_agents: int = 4, tick_minutes: int = 5, use_llm: bool = 
         relevant_memories = retrieve_memories(agent_state["agent_id"], query, limit=5)
         memory_context = memories_text(relevant_memories)
 
-        events.append({
+        yield {
             "type": "agent_observed",
             "agent_id": agent_state["agent_id"],
             "agent_name": agent_state["name"],
             "zone": agent_state["zone"],
             "summary": query,
-        })
+        }
 
         decision = _decide(agent_state, perception, query, memory_context, use_llm)
-        events.append({
+        yield {
             "type": "agent_planned",
             "agent_id": agent_state["agent_id"],
             "agent_name": agent_state["name"],
@@ -69,21 +85,22 @@ def simulation_step(max_agents: int = 4, tick_minutes: int = 5, use_llm: bool = 
             "inner_monologue": decision.get("inner_monologue", ""),
             "public_action": decision.get("public_action", ""),
             "emotional_state": decision.get("emotional_state", "neutral"),
-        })
+        }
 
-        events.extend(_execute_decision(state, agent_state, decision))
+        for event in _execute_decision(state, agent_state, decision):
+            yield event
         agent_state["last_active_step"] = state["step_number"]
+        save_state(state)
 
     save_state(state)
-    events.append({
+    yield {
         "type": "tick_done",
         "step": state["step_number"],
         "current_time": state["current_time"],
-    })
-    return {"state": state, "events": events}
+    }
 
 
-def run_simulation_steps(steps: int = 1, max_agents: int = 4, tick_minutes: int = 5, use_llm: bool = True) -> dict:
+def run_simulation_steps(steps: int = 1, max_agents: int = 0, tick_minutes: int = 5, use_llm: bool = True) -> dict:
     all_events: list[dict] = []
     result = {}
     for _ in range(max(1, steps)):
@@ -96,7 +113,9 @@ def _select_active_agents(state: dict, max_agents: int) -> list[dict]:
     agents = sorted(state["agents"].values(), key=lambda a: _agent_sort_key(a["agent_id"]))
     if not agents:
         return []
-    max_agents = max(1, min(max_agents, len(agents)))
+    if max_agents <= 0:
+        return agents
+    max_agents = min(max_agents, len(agents))
     start = state["step_number"] % len(agents)
     rotated = agents[start:] + agents[:start]
     return rotated[:max_agents]

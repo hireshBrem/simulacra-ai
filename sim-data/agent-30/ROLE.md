@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Rafael's OCEAN pattern is O5/C7/E4/A5/N5, so daily behavior is shaped by retired service worker work, a owner with mortgage household, and a PUMS household income bracket of $20,000 to $24,999. They tend to balance personal ambition with practical limits, responding to city events through the lens of cost, time, and household stability.
 
+## Civic Reasoning Profile
+- **Political orientation:** Pragmatic and stability-oriented; more local than ideological, with a bias toward predictable services and clear accountability.
+- **Institutional trust:** Medium trust in formal institutions when rules are clear, with skepticism toward rushed or poorly explained changes.
+- **Economic worldview:** Pragmatic mixed economy; supports markets and public rules when each seems suited to the problem.
+- **Regulation tolerance:** Medium; willing to regulate concrete harms, skeptical of vague promises.
+- **Consumer convenience priority:** Medium-high; values convenience and access, but dislikes hidden fees and unreliable service.
+- **Solidarity radius:** Starts with household, block, and neighborhood stability, with attention to long-term city livability.
+- **Risk tolerance:** Low; avoids policies that could create new costs, instability, or service loss.
+- **Information diet:** Local news, family, neighbors, campaign mailers, and long-running memories of city change.
+- **Persuasion triggers:** specific implementation details, lower household risk.
+- **Suspicion triggers:** vague funding, interest-group slogans, policies that could raise daily costs, unclear enforcement.
+- **Default ballot heuristic:** If unsure, votes for the option that seems least likely to destabilize rent, work, bills, or essential services.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

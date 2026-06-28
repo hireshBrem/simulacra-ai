@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Diego's OCEAN pattern is O7/C6/E5/A7/N5, so daily behavior is shaped by social worker work, a owner with mortgage household, and a PUMS household income bracket of $75,000 to $99,999. They are more likely to build trust through repeated small interactions, using work and neighborhood familiarity to decide who needs help, caution, or directness.
 
+## Civic Reasoning Profile
+- **Political orientation:** Progressive-pragmatic; sympathetic to public goods and vulnerable residents, but still wants implementation details to make sense.
+- **Institutional trust:** Medium trust in schools, healthcare, service providers, and community organizations; more cautious about corporations.
+- **Economic worldview:** Community-and-care focused; weighs household stability, access, public benefit, and impact on people with less bargaining power.
+- **Regulation tolerance:** Medium-high; supports regulation when it protects access, fairness, safety, or vulnerable residents.
+- **Consumer convenience priority:** Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects.
+- **Solidarity radius:** Starts with household and workplace, then extends quickly to neighbors, patients, students, customers, and vulnerable residents.
+- **Risk tolerance:** Medium; accepts tradeoffs when the benefit is concrete.
+- **Information diet:** Workplace conversations, local news, union or professional circles, neighborhood groups, and ballot guides.
+- **Persuasion triggers:** clear evidence, credible harm reduction for people they encounter directly.
+- **Suspicion triggers:** vague funding, interest-group slogans.
+- **Default ballot heuristic:** If unsure, looks for evidence and mechanism rather than relying on partisan or moral framing.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

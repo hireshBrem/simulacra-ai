@@ -37,15 +37,13 @@ interface CurrentRun {
 
 interface SimUIProps {
   isRunning: boolean
-  onWorldEvent: () => void
-  onEncounter: () => void
   onSimulation: () => void
   onStop: () => void
 }
 
 const roster = Object.entries(AGENT_CONFIG).map(([id, cfg]) => ({ id, ...cfg }))
 
-export default function SimUI({ isRunning, onWorldEvent, onEncounter, onSimulation, onStop }: SimUIProps) {
+export default function SimUI({ isRunning, onSimulation, onStop }: SimUIProps) {
   const [agents, setAgents] = useState<Record<string, AgentState>>({})
   const [activity, setActivity] = useState<ActivityItem[]>([])
   const [logEntries, setLogEntries] = useState<LogEntry[]>([])
@@ -280,8 +278,6 @@ export default function SimUI({ isRunning, onWorldEvent, onEncounter, onSimulati
 
   const btn =
     'px-4 py-3 font-mono text-sm border-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed'
-  const btnPrimary = `${btn} border-sky-500 text-sky-200 hover:bg-sky-500/20 active:bg-sky-500/40`
-  const btnSecondary = `${btn} border-amber-500 text-amber-200 hover:bg-amber-500/20 active:bg-amber-500/40`
   const btnLive = `${btn} border-emerald-500 text-emerald-200 hover:bg-emerald-500/20 active:bg-emerald-500/40`
   const btnStop = `${btn} border-red-500 text-red-200 hover:bg-red-500/20 active:bg-red-500/40`
   const btnLog = `${btn} border-emerald-500 text-emerald-200 hover:bg-emerald-500/20 active:bg-emerald-500/40`
@@ -300,12 +296,6 @@ export default function SimUI({ isRunning, onWorldEvent, onEncounter, onSimulati
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <button onClick={onWorldEvent} disabled={isRunning} className={btnPrimary}>
-            WORLD EVENT
-          </button>
-          <button onClick={onEncounter} disabled={isRunning} className={btnSecondary}>
-            RANDOM ENCOUNTER
-          </button>
           <button onClick={onSimulation} disabled={isRunning} className={btnLive}>
             LIVE SIM
           </button>

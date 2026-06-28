@@ -6,6 +6,13 @@ import {
   getAgentConfig, getZoneForAction,
 } from './constants'
 
+const UI_FONT = 'Menlo, Monaco, Consolas, "Liberation Mono", monospace'
+const TEXT_RESOLUTION = typeof window === 'undefined'
+  ? 1
+  : Math.min(Math.max(window.devicePixelRatio || 1, 1), 2)
+
+const textResolution = () => TEXT_RESOLUTION
+
 // ── Avatar ───────────────────────────────────────────────────────────────────
 
 class Avatar {
@@ -29,22 +36,25 @@ class Avatar {
     this.scene = scene
     this.agentId = agentId
 
-    this.shadow = scene.add.ellipse(0, 10, 26, 10, 0x000000, 0.35)
-    this.body = scene.add.arc(0, 0, 13, 0, 360, false, color, 1)
-    this.highlight = scene.add.arc(-4, -4, 4, 0, 360, false, 0xffffff, 0.2)
+    this.shadow = scene.add.ellipse(0, 11, 30, 11, 0x000000, 0.42)
+    this.body = scene.add.arc(0, 0, 14, 0, 360, false, color, 1)
+      .setStrokeStyle(2, 0xffffff, 0.28)
+    this.highlight = scene.add.arc(-4, -5, 4, 0, 360, false, 0xffffff, 0.32)
 
     this.nameLabel = scene.add.text(0, 18, name.split(' ')[0].toUpperCase(), {
-      fontFamily: 'monospace',
-      fontSize: '7px',
-      color: '#aabbff',
+      fontFamily: UI_FONT,
+      fontSize: '9px',
+      color: '#dbeafe',
       align: 'center',
-    }).setOrigin(0.5, 0)
+      resolution: textResolution(),
+    }).setOrigin(0.5, 0).setShadow(1, 1, '#020617', 2)
 
-    this.moodLabel = scene.add.text(0, 28, '', {
-      fontFamily: 'monospace',
-      fontSize: '6px',
-      color: '#556677',
+    this.moodLabel = scene.add.text(0, 31, '', {
+      fontFamily: UI_FONT,
+      fontSize: '7px',
+      color: '#8ea3c7',
       align: 'center',
+      resolution: textResolution(),
     }).setOrigin(0.5, 0)
 
     this.container = scene.add.container(x, y, [
@@ -97,9 +107,9 @@ class Avatar {
 
     const bw = 200
     const pad = 8
-    const lineH = 13
-    const fontSize = 9
-    const charsPerLine = 28
+    const lineH = 14
+    const fontSize = 10
+    const charsPerLine = 26
 
     // Wrap text manually
     const words = text.split(' ')
@@ -144,17 +154,21 @@ class Avatar {
     gfx.strokeTriangle(-5, by + bh, 5, by + bh, 0, by + bh + 10)
 
     const textObj = this.scene.add.text(0, by + pad, shown.join('\n'), {
-      fontFamily: 'monospace',
+      fontFamily: UI_FONT,
       fontSize: `${fontSize}px`,
       color: isThought ? '#7788cc' : '#111122',
       align: 'center',
       lineSpacing: 2,
+      resolution: textResolution(),
     }).setOrigin(0.5, 0)
 
     const items: Phaser.GameObjects.GameObject[] = [gfx, textObj]
 
     if (isThought) {
-      const icon = this.scene.add.text(bx + 4, by + 3, '🔒', { fontSize: '8px' })
+      const icon = this.scene.add.text(bx + 4, by + 3, '🔒', {
+        fontSize: '8px',
+        resolution: textResolution(),
+      })
       items.push(icon)
     }
 
@@ -186,11 +200,12 @@ class Avatar {
   floatText(text: string, color = '#ffdd44') {
     const ft = this.scene.add.text(
       this.container.x, this.container.y - 20, text, {
-        fontFamily: 'monospace',
-        fontSize: '8px',
+        fontFamily: UI_FONT,
+        fontSize: '10px',
         color,
+        resolution: textResolution(),
       },
-    ).setOrigin(0.5).setDepth(30)
+    ).setOrigin(0.5).setDepth(30).setShadow(1, 1, '#020617', 2)
 
     this.scene.tweens.add({
       targets: ft,
@@ -246,11 +261,11 @@ export class SimScene extends Phaser.Scene {
     g.fillRect(0, 0, CANVAS_W, CANVAS_H)
 
     // Subtle grid
-    g.lineStyle(1, 0x111120, 0.8)
-    for (let x = 0; x < CANVAS_W; x += 32) {
+    g.lineStyle(1, 0x15172b, 0.65)
+    for (let x = 0; x < CANVAS_W; x += 40) {
       g.beginPath(); g.moveTo(x, 0); g.lineTo(x, CANVAS_H); g.strokePath()
     }
-    for (let y = 0; y < CANVAS_H; y += 32) {
+    for (let y = 0; y < CANVAS_H; y += 40) {
       g.beginPath(); g.moveTo(0, y); g.lineTo(CANVAS_W, y); g.strokePath()
     }
   }
@@ -259,30 +274,29 @@ export class SimScene extends Phaser.Scene {
     const g = this.add.graphics()
 
     for (const zone of Object.values(ZONES)) {
-      // Fill
       g.fillStyle(zone.fillColor, 1)
       g.fillRect(zone.x, zone.y, zone.w, zone.h)
+      g.fillStyle(0xffffff, 0.035)
+      g.fillRect(zone.x + 3, zone.y + 3, zone.w - 6, 24)
 
-      // 2px border
-      g.lineStyle(2, zone.borderColor, 1)
+      g.lineStyle(3, zone.borderColor, 1)
       g.strokeRect(zone.x, zone.y, zone.w, zone.h)
 
-      // Corner accents
       g.fillStyle(zone.borderColor, 1)
       const corners = [
         [zone.x, zone.y],
-        [zone.x + zone.w - 4, zone.y],
-        [zone.x, zone.y + zone.h - 4],
-        [zone.x + zone.w - 4, zone.y + zone.h - 4],
+        [zone.x + zone.w - 7, zone.y],
+        [zone.x, zone.y + zone.h - 7],
+        [zone.x + zone.w - 7, zone.y + zone.h - 7],
       ] as const
-      for (const [cx, cy] of corners) g.fillRect(cx, cy, 4, 4)
+      for (const [cx, cy] of corners) g.fillRect(cx, cy, 7, 7)
 
-      // Label
       this.add.text(zone.x + 8, zone.y + 6, zone.label, {
-        fontFamily: 'monospace',
-        fontSize: '7px',
-        color: zone.textColor,
-      }).setAlpha(0.9)
+        fontFamily: UI_FONT,
+        fontSize: '10px',
+        color: '#e5f2ff',
+        resolution: textResolution(),
+      }).setAlpha(0.96).setShadow(1, 1, '#020617', 2)
     }
   }
 
@@ -294,23 +308,22 @@ export class SimScene extends Phaser.Scene {
     ]
     for (const h of headers) {
       this.add.text(h.x, 24, h.label, {
-        fontFamily: 'monospace',
-        fontSize: '8px',
+        fontFamily: UI_FONT,
+        fontSize: '11px',
         color: h.color,
-      }).setOrigin(0.5).setAlpha(0.7)
+        resolution: textResolution(),
+      }).setOrigin(0.5).setAlpha(0.9).setShadow(1, 1, '#020617', 2)
     }
 
-    // Vertical dividers
     const dg = this.add.graphics()
-    dg.lineStyle(1, 0x222244, 1)
+    dg.lineStyle(2, 0x27304c, 0.85)
     dg.beginPath(); dg.moveTo(320, 15); dg.lineTo(320, 360); dg.strokePath()
     dg.beginPath(); dg.moveTo(640, 15); dg.lineTo(640, 360); dg.strokePath()
   }
 
   private drawPaths() {
-    // Subtle pathways between zones
     const g = this.add.graphics()
-    g.fillStyle(0x0e0e1e, 1)
+    g.fillStyle(0x17182b, 1)
     g.fillRect(244, 100, 126, 20)
     g.fillRect(244, 260, 126, 20)
     g.fillRect(590, 100, 130, 20)
@@ -359,11 +372,11 @@ export class SimScene extends Phaser.Scene {
     const cols = zone.w >= 280 ? 5 : 4
     const col = slot % cols
     const row = Math.floor(slot / cols)
-    const x = zone.x + 34 + col * 46
-    const y = zone.y + 34 + row * 36
+    const x = zone.x + 32 + col * 51
+    const y = zone.y + 42 + row * 39
     return {
-      x: Math.min(x, zone.x + zone.w - 28),
-      y: Math.min(y, zone.y + zone.h - 28),
+      x: Math.min(x, zone.x + zone.w - 30),
+      y: Math.min(y, zone.y + zone.h - 24),
     }
   }
 
@@ -426,10 +439,11 @@ export class SimScene extends Phaser.Scene {
       .setAlpha(0)
 
     this.worldBannerText = this.add.text(CANVAS_W / 2, CANVAS_H - 24, '', {
-      fontFamily: 'monospace',
-      fontSize: '9px',
+      fontFamily: UI_FONT,
+      fontSize: '11px',
       color: '#8899ff',
-    }).setOrigin(0.5).setDepth(26).setAlpha(0)
+      resolution: textResolution(),
+    }).setOrigin(0.5).setDepth(26).setAlpha(0).setShadow(1, 1, '#020617', 2)
   }
 
   private showWorldBanner(content: string) {

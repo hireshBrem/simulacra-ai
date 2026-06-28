@@ -24,6 +24,14 @@ DERIVATION_RULES = (
     "Neuroticism, while high household income and ownership lower it."
 )
 
+CIVIC_DERIVATION_RULES = (
+    "Civic reasoning profiles are synthetic, general-purpose priors derived from "
+    "occupation class, age, income, housing tenure, neighborhood context, and OCEAN "
+    "scores. They are not issue-specific voting instructions; they describe how an "
+    "agent tends to evaluate tradeoffs across many civic, workplace, economic, and "
+    "neighborhood scenarios."
+)
+
 TENURE = {
     "1": "Owner with mortgage",
     "2": "Owner free and clear",
@@ -222,10 +230,198 @@ def behavioral_profile(p: dict, scores: tuple[int, int, int, int, int]) -> str:
     return first + " " + second
 
 
+def civic_profile(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    o, c, e, a, n = scores
+    work = p["work_class"]
+    age = p["age"]
+    hinc = p["household_income"]
+    renter = p["tenure_code"] == "3"
+
+    orientation = _political_orientation(p, scores)
+    trust = _institutional_trust(p, scores)
+    worldview = _economic_worldview(p, scores)
+    regulation = _regulation_tolerance(p, scores)
+    convenience = _consumer_convenience_priority(p, scores)
+    solidarity = _solidarity_radius(p, scores)
+    risk = _risk_tolerance(p, scores)
+    info = _information_diet(p)
+    persuasion = _persuasion_triggers(p, scores)
+    suspicion = _suspicion_triggers(p, scores)
+    heuristic = _ballot_heuristic(p, scores)
+
+    return textwrap.dedent(
+        f"""\
+        ## Civic Reasoning Profile
+        - **Political orientation:** {orientation}
+        - **Institutional trust:** {trust}
+        - **Economic worldview:** {worldview}
+        - **Regulation tolerance:** {regulation}
+        - **Consumer convenience priority:** {convenience}
+        - **Solidarity radius:** {solidarity}
+        - **Risk tolerance:** {risk}
+        - **Information diet:** {info}
+        - **Persuasion triggers:** {persuasion}
+        - **Suspicion triggers:** {suspicion}
+        - **Default ballot heuristic:** {heuristic}
+        """
+    ).strip()
+
+
+def _political_orientation(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    o, c, _e, a, _n = scores
+    work = p["work_class"]
+    if work in {"education/legal/social service", "arts/media"} or a >= 7:
+        return "Progressive-pragmatic; sympathetic to public goods and vulnerable residents, but still wants implementation details to make sense."
+    if work in {"business/finance", "sales"} and p["household_income"] >= 150000:
+        return "Moderate and market-aware; open to social protections but cautious about rules that disrupt services, prices, or business activity."
+    if work in {"computer/math"} and o >= 7:
+        return "Technocratic center-left; prefers evidence, measurable outcomes, and practical fixes over slogans."
+    if p["age"] >= 65 or c >= 7:
+        return "Pragmatic and stability-oriented; more local than ideological, with a bias toward predictable services and clear accountability."
+    return "Non-ideological center-left; decides from household pressure, neighborhood experience, and perceived fairness."
+
+
+def _institutional_trust(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    _o, c, _e, a, n = scores
+    if n >= 7:
+        return "Medium-low trust in City Hall and large institutions; trusts direct experience, coworkers, and neighborhood signals more."
+    if c >= 7 and p["age"] >= 60:
+        return "Medium trust in formal institutions when rules are clear, with skepticism toward rushed or poorly explained changes."
+    if p["work_class"] in {"business/finance", "computer/math"}:
+        return "Medium trust in data and competent administration; low patience for vague claims from campaigns or agencies."
+    if a >= 7:
+        return "Medium trust in schools, healthcare, service providers, and community organizations; more cautious about corporations."
+    return "Mixed trust; listens to official arguments but checks them against workplace and neighborhood experience."
+
+
+def _economic_worldview(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    _o, _c, _e, a, n = scores
+    work = p["work_class"]
+    if work in {"business/finance", "sales", "management"}:
+        return "Business-aware; values entrepreneurship, predictable rules, and local commerce, while recognizing that large institutions can exploit leverage."
+    if work in {"service", "maintenance", "production", "transportation/logistics", "office/admin"}:
+        return "Work-and-cost focused; evaluates policy by wages, prices, scheduling pressure, and whether ordinary workers absorb the downside."
+    if work in {"education/legal/social service", "healthcare"} or a >= 7:
+        return "Community-and-care focused; weighs household stability, access, public benefit, and impact on people with less bargaining power."
+    if work == "computer/math":
+        return "Systems-oriented; receptive to innovation and platforms, but skeptical when market power creates unfair or inefficient outcomes."
+    if n >= 6:
+        return "Household-security focused; looks first at rent, bills, job stability, and exposure to sudden cost increases."
+    return "Pragmatic mixed economy; supports markets and public rules when each seems suited to the problem."
+
+
+def _regulation_tolerance(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    o, c, _e, a, n = scores
+    work = p["work_class"]
+    if work in {"business/finance", "sales", "management"} and c >= 6:
+        return "Medium-low; supports guardrails for obvious harm but worries about compliance burden and unintended side effects."
+    if work in {"education/legal/social service", "healthcare"} or a >= 7:
+        return "Medium-high; supports regulation when it protects access, fairness, safety, or vulnerable residents."
+    if work == "computer/math" and o >= 7:
+        return "Medium; wants targeted, evidence-backed rules rather than broad symbolic restrictions."
+    if n >= 7:
+        return "Medium; supports protections against shocks but is wary of rules that could raise daily costs."
+    return "Medium; willing to regulate concrete harms, skeptical of vague promises."
+
+
+def _consumer_convenience_priority(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    _o, _c, _e, _a, n = scores
+    work = p["work_class"]
+    if work in {"computer/math", "business/finance", "management", "transportation/logistics"} and p["household_income"] >= 125000:
+        return "High; time-saving services matter, especially when work is demanding or schedules are tight."
+    if p["age"] >= 65:
+        return "Medium-high; values convenience and access, but dislikes hidden fees and unreliable service."
+    if n >= 7 or p["household_income"] < 75000:
+        return "Medium; convenience matters, but price and household risk usually come first."
+    return "Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects."
+
+
+def _solidarity_radius(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    _o, _c, _e, a, n = scores
+    if a >= 7:
+        return "Starts with household and workplace, then extends quickly to neighbors, patients, students, customers, and vulnerable residents."
+    if n >= 7:
+        return "Starts with household security and close community, then expands when the policy risk feels manageable."
+    if p["tenure_code"] != "3":
+        return "Starts with household, block, and neighborhood stability, with attention to long-term city livability."
+    return "Starts with household budget and neighborhood routines, then considers citywide fairness."
+
+
+def _risk_tolerance(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    o, c, _e, _a, n = scores
+    if n >= 7 or p["household_income"] < 50000:
+        return "Low; avoids policies that could create new costs, instability, or service loss."
+    if o >= 7 and c <= 5 and p["age"] < 45:
+        return "Medium-high; open to experiments if the logic is clear and the downside is bounded."
+    if c >= 7 or p["age"] >= 60:
+        return "Low-medium; prefers incremental, enforceable changes over sweeping experiments."
+    return "Medium; accepts tradeoffs when the benefit is concrete."
+
+
+def _information_diet(p: dict) -> str:
+    work = p["work_class"]
+    if work == "computer/math":
+        return "Local news summaries, search, social feeds, coworkers, group chats, and ballot guides."
+    if work in {"education/legal/social service", "healthcare"}:
+        return "Workplace conversations, local news, union or professional circles, neighborhood groups, and ballot guides."
+    if work in {"service", "sales", "office/admin", "maintenance", "production", "transportation/logistics"}:
+        return "Coworkers, customers, family, neighborhood conversations, local headlines, social media, and campaign mailers."
+    if work in {"business/finance", "management"}:
+        return "Local business news, professional peers, clients, neighborhood signals, ballot mailers, and mainstream news."
+    return "Local news, family, neighbors, campaign mailers, and long-running memories of city change."
+
+
+def _persuasion_triggers(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    o, c, _e, a, n = scores
+    triggers = []
+    if o >= 7:
+        triggers.append("clear evidence")
+    if c >= 7:
+        triggers.append("specific implementation details")
+    if a >= 7:
+        triggers.append("credible harm reduction for people they encounter directly")
+    if n >= 7 or p["household_income"] < 75000:
+        triggers.append("lower household risk")
+    if p["work_class"] in {"business/finance", "management", "sales"}:
+        triggers.append("predictable economic effects")
+    if not triggers:
+        triggers.extend(["concrete examples", "trusted local messengers"])
+    return ", ".join(triggers) + "."
+
+
+def _suspicion_triggers(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    _o, c, _e, _a, n = scores
+    triggers = ["vague funding", "interest-group slogans"]
+    if p["work_class"] in {"business/finance", "management", "sales"}:
+        triggers.append("rules that ignore operating realities")
+    if p["work_class"] == "computer/math":
+        triggers.append("claims without data")
+    if p["household_income"] < 75000 or n >= 7:
+        triggers.append("policies that could raise daily costs")
+    if c >= 7 or p["age"] >= 60:
+        triggers.append("unclear enforcement")
+    return ", ".join(triggers) + "."
+
+
+def _ballot_heuristic(p: dict, scores: tuple[int, int, int, int, int]) -> str:
+    o, c, _e, a, n = scores
+    if n >= 7 or p["household_income"] < 50000:
+        return "If unsure, votes for the option that seems least likely to destabilize rent, work, bills, or essential services."
+    if c >= 7 or p["age"] >= 60:
+        return "If unsure, votes No on complicated structural changes and Yes on simple, enforceable protections with clear beneficiaries."
+    if p["work_class"] in {"business/finance", "management", "sales"}:
+        return "If unsure, follows the side with the clearest account of who pays, who benefits, and how businesses will adapt."
+    if o >= 7:
+        return "If unsure, looks for evidence and mechanism rather than relying on partisan or moral framing."
+    if a >= 7:
+        return "If unsure, leans toward the side that reduces harm for people they personally recognize from work or neighborhood life."
+    return "If unsure, uses a practical cost-benefit test grounded in household and neighborhood consequences."
+
+
 def role_markdown(p: dict) -> str:
     scores = ocean(p)
     o, c, e, a, n = scores
-    return textwrap.dedent(
+    content = textwrap.dedent(
         f"""\
         # Role: {p['name']}
 
@@ -259,6 +455,8 @@ def role_markdown(p: dict) -> str:
         ## Behavioral Profile
         {behavioral_profile(p, scores)}
 
+        %%CIVIC_PROFILE%%
+
         ## Communication Style
         - Speaks from concrete local experience before abstract principles.
         - Notices money, time, and housing constraints as practical facts in conversation.
@@ -275,6 +473,7 @@ def role_markdown(p: dict) -> str:
         - Keeps responses consistent with the OCEAN scores above.
         """
     )
+    return content.replace("%%CIVIC_PROFILE%%", civic_profile(p, scores))
 
 
 def memory_markdown(p: dict) -> str:

@@ -46,12 +46,26 @@ export function useSimStream() {
   const runSimulation = useCallback(() => {
     const params = new URLSearchParams({
       tick_seconds: '2',
+      event_delay: '4',
       max_ticks: '0',
-      max_agents: '4',
+      max_agents: '0',
       tick_minutes: '5',
       use_llm: 'true',
     })
     connect(`${API}/stream/simulation?${params}`)
+  }, [connect])
+
+  const runBehavioralScenario = useCallback((
+    title: string,
+    prompt: string,
+    responseMode: 'yes_no_reason' | 'freeform',
+  ) => {
+    const params = new URLSearchParams({
+      title,
+      prompt,
+      response_mode: responseMode,
+    })
+    connect(`${API}/stream/experiments/behavioral-scenarios?${params}`)
   }, [connect])
 
   const stop = useCallback(() => {
@@ -59,5 +73,5 @@ export function useSimStream() {
     setIsRunning(false)
   }, [])
 
-  return { isRunning, runWorldEvent, runEncounter, runSimulation, stop }
+  return { isRunning, runWorldEvent, runEncounter, runSimulation, runBehavioralScenario, stop }
 }

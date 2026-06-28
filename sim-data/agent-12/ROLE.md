@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Elena's OCEAN pattern is O7/C7/E4/A7/N3, so daily behavior is shaped by elementary school teacher work, a owner free and clear household, and a PUMS household income bracket of $150,000 to $199,999. They are more likely to build trust through repeated small interactions, using work and neighborhood familiarity to decide who needs help, caution, or directness.
 
+## Civic Reasoning Profile
+- **Political orientation:** Progressive-pragmatic; sympathetic to public goods and vulnerable residents, but still wants implementation details to make sense.
+- **Institutional trust:** Medium trust in formal institutions when rules are clear, with skepticism toward rushed or poorly explained changes.
+- **Economic worldview:** Community-and-care focused; weighs household stability, access, public benefit, and impact on people with less bargaining power.
+- **Regulation tolerance:** Medium-high; supports regulation when it protects access, fairness, safety, or vulnerable residents.
+- **Consumer convenience priority:** Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects.
+- **Solidarity radius:** Starts with household and workplace, then extends quickly to neighbors, patients, students, customers, and vulnerable residents.
+- **Risk tolerance:** Low-medium; prefers incremental, enforceable changes over sweeping experiments.
+- **Information diet:** Workplace conversations, local news, union or professional circles, neighborhood groups, and ballot guides.
+- **Persuasion triggers:** clear evidence, specific implementation details, credible harm reduction for people they encounter directly.
+- **Suspicion triggers:** vague funding, interest-group slogans, unclear enforcement.
+- **Default ballot heuristic:** If unsure, votes No on complicated structural changes and Yes on simple, enforceable protections with clear beneficiaries.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

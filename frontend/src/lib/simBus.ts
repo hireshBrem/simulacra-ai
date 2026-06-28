@@ -1,5 +1,23 @@
 import mitt from 'mitt'
 
+export interface BehavioralScenarioResponse {
+  agent_id: string
+  agent_name: string
+  response: string
+  vote?: 'Yes' | 'No'
+  reason?: string
+}
+
+export interface BehavioralScenarioSummary {
+  total?: number
+  vote_split?: { yes: number; no: number; total: number }
+  top_reasons?: {
+    yes: Array<{ reason: string; count: number; example: string }>
+    no: Array<{ reason: string; count: number; example: string }>
+  }
+  most_interesting?: BehavioralScenarioResponse & { why_interesting?: string }
+}
+
 export type SimEvent =
   | { type: 'simulation_started' }
   | { type: 'simulation_stopped'; ticks_run: number }
@@ -14,6 +32,9 @@ export type SimEvent =
   | { type: 'encounter_start'; encounter_id?: string; topic: string; zone?: string; participants: Array<{ agent_id: string; name: string }> }
   | { type: 'agent_utterance'; encounter_id?: string; exchange: number; speaker_id: string; speaker_name: string; internal_state: string; utterance: string }
   | { type: 'encounter_end'; encounter_id: string; participants: Array<{ agent_id: string; name: string }> }
+  | { type: 'behavioral_scenario_started'; experiment_id: string; title: string; prompt: string; response_mode: 'yes_no_reason' | 'freeform' }
+  | ({ type: 'behavioral_agent_response'; experiment_id: string } & BehavioralScenarioResponse)
+  | { type: 'behavioral_scenario_summary'; experiment_id: string; summary: BehavioralScenarioSummary }
   | { type: 'memory_saved'; agent_id: string; agent_name: string; entry: string }
   | { type: 'reflection_saved'; agent_id: string; agent_name: string; entry: string }
   | { type: 'done' }

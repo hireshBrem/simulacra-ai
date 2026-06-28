@@ -15,13 +15,10 @@ body {
   font-family: var(--font-geist-mono), monospace;
 }
 
-/* Make Phaser canvas render crisp at any scale */
+/* Keep Phaser canvases block-level; Phaser's Scale Manager owns sizing. */
 canvas {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
   display: block;
-  width: 100% !important;
-  height: auto !important;
+  max-width: 100%;
 }
 
 /* Pixel-art line-clamp */

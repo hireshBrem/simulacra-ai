@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Connor's OCEAN pattern is O5/C7/E5/A5/N4, so daily behavior is shaped by financial analyst work, a renter household, and a PUMS household income bracket of $200,000 or more. They tend to balance personal ambition with practical limits, responding to city events through the lens of cost, time, and household stability.
 
+## Civic Reasoning Profile
+- **Political orientation:** Moderate and market-aware; open to social protections but cautious about rules that disrupt services, prices, or business activity.
+- **Institutional trust:** Medium trust in data and competent administration; low patience for vague claims from campaigns or agencies.
+- **Economic worldview:** Business-aware; values entrepreneurship, predictable rules, and local commerce, while recognizing that large institutions can exploit leverage.
+- **Regulation tolerance:** Medium-low; supports guardrails for obvious harm but worries about compliance burden and unintended side effects.
+- **Consumer convenience priority:** High; time-saving services matter, especially when work is demanding or schedules are tight.
+- **Solidarity radius:** Starts with household budget and neighborhood routines, then considers citywide fairness.
+- **Risk tolerance:** Low-medium; prefers incremental, enforceable changes over sweeping experiments.
+- **Information diet:** Local business news, professional peers, clients, neighborhood signals, ballot mailers, and mainstream news.
+- **Persuasion triggers:** specific implementation details, predictable economic effects.
+- **Suspicion triggers:** vague funding, interest-group slogans, rules that ignore operating realities, unclear enforcement.
+- **Default ballot heuristic:** If unsure, votes No on complicated structural changes and Yes on simple, enforceable protections with clear beneficiaries.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

@@ -1,0 +1,250 @@
+{
+  "experiment_id": "2ae6d667",
+  "type": "behavioral_scenario",
+  "date": "2026-06-28",
+  "title": "Prop X delivery fee cap",
+  "prompt": "San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence.",
+  "response_mode": "yes_no_reason",
+  "responses": [
+    {
+      "agent_id": "agent-1",
+      "agent_name": "Mateo Rivera",
+      "response": "Yes, because the cap would directly benefit local restaurants in my neighborhood",
+      "vote": "Yes",
+      "reason": "The cap would directly benefit local restaurants in my neighborhood, many of which I frequent and are struggling to stay afloat due to high commission fees from these apps"
+    },
+    {
+      "agent_id": "agent-2",
+      "agent_name": "James Park",
+      "response": "Yes, because capping food delivery app fees at 15% would help reduce my cost of living in San Francisco.",
+      "vote": "Yes",
+      "reason": "Capping food delivery app fees at 15% would directly lower the cost of living for renters like myself in an already expensive city like San Francisco, which aligns with my practical concerns about affordability."
+    },
+    {
+      "agent_id": "agent-3",
+      "agent_name": "Wei Chen",
+      "response": "Yes, because the cap would help reduce the cost of food for consumers like myself.",
+      "vote": "Yes",
+      "reason": "The cap would help reduce the cost of food for consumers like myself, who frequently rely on delivery services due to busy schedules and high costs of living in San Francisco."
+    },
+    {
+      "agent_id": "agent-4",
+      "agent_name": "Nadia Lewis",
+      "response": "Yes, because capping food delivery app fees at 15% would help reduce the cost of living in San Francisco.",
+      "vote": "Yes",
+      "reason": "Capping food delivery app fees at 15% would help reduce the cost of living in San Francisco, which is a significant concern for me as a renter in an expensive city like Nob Hill."
+    },
+    {
+      "agent_id": "agent-5",
+      "agent_name": "Rosa Calderon",
+      "response": "Yes, because capping food delivery app fees at 15% would help reduce the cost of living for people like me who frequently rely on these services.",
+      "vote": "Yes",
+      "reason": "As a renter in an expensive city like San Francisco, I believe capping food delivery app fees at 15% would help reduce the cost of living for people like me who frequently rely on these services due to busy work schedules and limited dining options in my neighborhood."
+    },
+    {
+      "agent_id": "agent-6",
+      "agent_name": "Andre Brooks",
+      "response": "Yes, because capping food delivery app fees would help local restaurants compete more fairly.",
+      "vote": "Yes",
+      "reason": "As a food service manager in Chinatown, I believe capping food delivery app fees at 15% would help reduce the financial burden on local restaurants and allow them to compete more fairly in the market, which is crucial for the livelihood of my business and the community I serve."
+    },
+    {
+      "agent_id": "agent-7",
+      "agent_name": "Tane Fale",
+      "response": "Yes, As a renter living in a high-cost city like San Francisco, capping food delivery app fees at 15% would directly help my neighbors and me by reducing the cost of ordering food from local restaurants that we frequently rely on",
+      "vote": "Yes",
+      "reason": "As a renter living in a high-cost city like San Francisco, capping food delivery app fees at 15% would directly help my neighbors and me by reducing the cost of ordering food from local restaurants that we frequently rely on"
+    },
+    {
+      "agent_id": "agent-8",
+      "agent_name": "Connor Wallace",
+      "response": "Yes, As a financial analyst and renter in an expensive city, I believe capping food delivery app fees would help reduce the cost of living for many San Francisco residents, including myself.",
+      "vote": "Yes",
+      "reason": "As a financial analyst and renter in an expensive city, I believe capping food delivery app fees would help reduce the cost of living for many San Francisco residents, including myself."
+    },
+    {
+      "agent_id": "agent-9",
+      "agent_name": "Leilani Cruz",
+      "response": "Yes, because the cap would help protect the small, locally-owned restaurants in my neighborhood from excessive fees.",
+      "vote": "Yes",
+      "reason": "The cap would help protect the small, locally-owned restaurants in my neighborhood from excessive fees, which is important to me as a long-time resident of Mission who values community character and affordability."
+    },
+    {
+      "agent_id": "agent-10",
+      "agent_name": "Diego Morales",
+      "response": "Yes, As a social worker living in a neighborhood with many small, independently owned restaurants, I believe capping food delivery app fees would help these local businesses stay afloat and continue to serve our community.",
+      "vote": "Yes",
+      "reason": "As a social worker living in a neighborhood with many small, independently owned restaurants, I believe capping food delivery app fees would help these local businesses stay afloat and continue to serve our community."
+    },
+    {
+      "agent_id": "agent-11",
+      "agent_name": "Arjun Patel",
+      "response": "Yes, As a renter living in a neighborhood with rising costs, capping food delivery app fees would help protect the small businesses and restaurants in my community that are already struggling to stay afloat.",
+      "vote": "Yes",
+      "reason": "As a renter living in a neighborhood with rising costs, capping food delivery app fees would help protect the small businesses and restaurants in my community that are already struggling to stay afloat."
+    },
+    {
+      "agent_id": "agent-12",
+      "agent_name": "Elena Yazzie",
+      "response": "Yes, because capping food delivery app fees would help our local restaurants stay in business.",
+      "vote": "Yes",
+      "reason": "As a long-time resident and elementary school teacher in Bayview, I believe capping food delivery app fees at 15% would help our local restaurants and eateries stay in business and keep our community vibrant, which is especially important given the already high cost of living in San Francisco."
+    },
+    {
+      "agent_id": "agent-13",
+      "agent_name": "Malik Johnson",
+      "response": "Yes, because capping food delivery app fees at 15% would support local restaurants in my neighborhood.",
+      "vote": "Yes",
+      "reason": "As a resident of San Francisco with a household income bracket of $150,000 to $199,999, I believe capping food delivery app fees at 15% would help local restaurants in my neighborhood, like those in Chinatown, to stay competitive and thrive in the face of high operating costs in the city."
+    },
+    {
+      "agent_id": "agent-14",
+      "agent_name": "Samuel Miller",
+      "response": "Yes, As a renter living on a limited income in an expensive city, I believe capping food delivery app fees at 15% would help reduce the cost of living for people like me who occasionally rely on these services.",
+      "vote": "Yes",
+      "reason": "As a renter living on a limited income in an expensive city, I believe capping food delivery app fees at 15% would help reduce the cost of living for people like me who occasionally rely on these services."
+    },
+    {
+      "agent_id": "agent-15",
+      "agent_name": "Minh Nguyen",
+      "response": "Yes, I would vote yes because as a renter living in a expensive city like San Francisco, any regulation that helps keep the cost of living down, such as capping food delivery fees, is a welcome relief for my household budget.",
+      "vote": "Yes",
+      "reason": "I would vote yes because as a renter living in a expensive city like San Francisco, any regulation that helps keep the cost of living down, such as capping food delivery fees, is a welcome relief for my household budget."
+    },
+    {
+      "agent_id": "agent-16",
+      "agent_name": "Avery Thompson",
+      "response": "Yes, because the cap would help our local restaurants stay in business.",
+      "vote": "Yes",
+      "reason": "The cap would directly benefit the local restaurants I frequent in Sunset, many of which are struggling to stay afloat due to the high fees charged by these food delivery apps."
+    },
+    {
+      "agent_id": "agent-17",
+      "agent_name": "Aiyana Begay",
+      "response": "Yes, because capping food delivery app fees at 15% would support local eateries and jobs.",
+      "vote": "Yes",
+      "reason": "As a food service worker in a high-cost city like San Francisco, I believe capping food delivery app fees at 15% would help local eateries stay afloat and keep jobs in the community, which aligns with my goal of maintaining household stability in an expensive city."
+    },
+    {
+      "agent_id": "agent-18",
+      "agent_name": "Malia Kealoha",
+      "response": "I'd vote yes because it helps our local eateries thrive.",
+      "vote": "Yes",
+      "reason": "The cap would help protect local restaurants and small businesses in my Excelsior neighborhood from excessive fees, which is crucial for maintaining the community's character and affordability."
+    },
+    {
+      "agent_id": "agent-19",
+      "agent_name": "Lucia Ortega",
+      "response": "Yes, because the cap would help local restaurants in the Tenderloin neighborhood where I live and work, many of which are struggling to stay afloat due to high commission fees from food delivery apps",
+      "vote": "Yes",
+      "reason": "The cap would help local restaurants in the Tenderloin neighborhood where I live and work, many of which are struggling to stay afloat due to high commission fees from food delivery apps"
+    },
+    {
+      "agent_id": "agent-20",
+      "agent_name": "Darius Carter",
+      "response": "Yes, because capping food delivery app fees helps reduce the cost of living.",
+      "vote": "Yes",
+      "reason": "I would vote yes because capping food delivery app fees at 15% would help reduce the cost of living in San Francisco, which is a major concern for me as a renter living in a high-cost city like Richmond."
+    },
+    {
+      "agent_id": "agent-21",
+      "agent_name": "Tane Mahina",
+      "response": "Yes, because capping food delivery app fees at 15% could help reduce the financial burden on local restaurants in my neighborhood.",
+      "vote": "Yes",
+      "reason": "I would vote yes because capping food delivery app fees at 15% could help reduce the financial burden on local restaurants in my neighborhood, which are already struggling with high operational costs in San Francisco."
+    },
+    {
+      "agent_id": "agent-22",
+      "agent_name": "Megan Yazzie",
+      "response": "Yes, because the cap would help local restaurants in my neighborhood, many of which I've seen struggle to stay afloat due to high commission fees from these apps, and this directly affects my community's character and small business landscape.",
+      "vote": "Yes",
+      "reason": "The cap would help local restaurants in my neighborhood, many of which I've seen struggle to stay afloat due to high commission fees from these apps, and this directly affects my community's character and small business landscape."
+    },
+    {
+      "agent_id": "agent-23",
+      "agent_name": "Grace Liu",
+      "response": "Yes, I would vote yes because as a low-to-moderate income resident, capping food delivery app fees at 15% would help my local businesses stay in operation and keep food prices lower for people like me.",
+      "vote": "Yes",
+      "reason": "I would vote yes because as a low-to-moderate income resident, capping food delivery app fees at 15% would help my local businesses stay in operation and keep food prices lower for people like me."
+    },
+    {
+      "agent_id": "agent-24",
+      "agent_name": "Peter Novak",
+      "response": "Yes, I would support the cap because as a homeowner in an expensive city like San Francisco, I understand the struggle of small businesses and restaurants to stay afloat amidst high operational costs, and capping fees could help them survive and maintain the local character of our neighborhoods.",
+      "vote": "Yes",
+      "reason": "I would support the cap because as a homeowner in an expensive city like San Francisco, I understand the struggle of small businesses and restaurants to stay afloat amidst high operational costs, and capping fees could help them survive and maintain the local character of our neighborhoods."
+    },
+    {
+      "agent_id": "agent-25",
+      "agent_name": "Keone Tui",
+      "response": "I'd vote yes because reducing delivery fees helps manage household expenses.",
+      "vote": "Yes",
+      "reason": "The cap on food delivery app fees would help reduce the cost of living for households like mine in Richmond, where every dollar counts in managing expenses on a $75,000 to $99,999 income bracket."
+    },
+    {
+      "agent_id": "agent-26",
+      "agent_name": "Samir Haddad",
+      "response": "I'd vote yes because it could make living here slightly more affordable.",
+      "vote": "Yes",
+      "reason": "The cap on food delivery app fees would help reduce the cost of living in San Francisco, which is a major concern for me as a renter in a high-cost neighborhood like Mission."
+    },
+    {
+      "agent_id": "agent-27",
+      "agent_name": "Monique Davis",
+      "response": "Yes, because capping food delivery app fees would help reduce costs for local restaurants and residents like myself.",
+      "vote": "Yes",
+      "reason": "I would vote yes because capping food delivery app fees at 15% would help reduce the cost of ordering food from my favorite local restaurants in North Beach, which aligns with my practical concern for managing household expenses in an expensive city like San Francisco."
+    },
+    {
+      "agent_id": "agent-28",
+      "agent_name": "Isabel Torres",
+      "response": "Yes, As a production worker living in a household with a mortgage in an expensive city like San Francisco, I believe capping food delivery app fees would help reduce costs for local restaurants and consumers like myself.",
+      "vote": "Yes",
+      "reason": "As a production worker living in a household with a mortgage in an expensive city like San Francisco, I believe capping food delivery app fees would help reduce costs for local restaurants and consumers like myself."
+    },
+    {
+      "agent_id": "agent-29",
+      "agent_name": "Carol Yazzie",
+      "response": "Yes, As a retiree living in an expensive city, I believe capping food delivery app fees at 15% would help reduce the cost of living for many of my neighbors and myself.",
+      "vote": "Yes",
+      "reason": "As a retiree living in an expensive city, I believe capping food delivery app fees at 15% would help reduce the cost of living for many of my neighbors and myself."
+    },
+    {
+      "agent_id": "agent-30",
+      "agent_name": "Rafael Santana",
+      "response": "Yes, because capping fees would help local businesses and residents save money.",
+      "vote": "Yes",
+      "reason": "As a retired service worker living in a high-cost city like San Francisco, I believe capping food delivery app fees at 15% would help my neighbors and local restaurants save money and stay afloat in our community."
+    }
+  ],
+  "summary": {
+    "vote_split": {
+      "yes": 30,
+      "no": 0,
+      "total": 30
+    },
+    "top_reasons": {
+      "yes": [
+        {
+          "reason": "Protecting restaurants and local businesses",
+          "count": 18,
+          "example": "The cap would directly benefit local restaurants in my neighborhood, many of which I frequent and are struggling to stay afloat due to high commission fees from these apps"
+        },
+        {
+          "reason": "Limiting platform fees",
+          "count": 12,
+          "example": "Capping food delivery app fees at 15% would directly lower the cost of living for renters like myself in an already expensive city like San Francisco, which aligns with my practical concerns about affordability."
+        }
+      ],
+      "no": []
+    },
+    "most_interesting": {
+      "agent_id": "agent-12",
+      "agent_name": "Elena Yazzie",
+      "response": "Yes, because capping food delivery app fees would help our local restaurants stay in business.",
+      "vote": "Yes",
+      "reason": "As a long-time resident and elementary school teacher in Bayview, I believe capping food delivery app fees at 15% would help our local restaurants and eateries stay in business and keep our community vibrant, which is especially important given the already high cost of living in San Francisco.",
+      "why_interesting": "It stands out because it gives the most specific lived-context rationale and represents the No side."
+    }
+  }
+}

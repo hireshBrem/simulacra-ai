@@ -4,6 +4,7 @@ Each event is a JSON-encoded SimEvent delivered as a text/event-stream.
 """
 import asyncio
 import json
+import uuid
 from datetime import datetime
 from fastapi import APIRouter, Query
 from fastapi.responses import StreamingResponse
@@ -12,7 +13,14 @@ from agents.loader import load_all_agents
 from agents.memory import append_memory
 from agents.runner import run_agent_action, run_conversation_turn, generate_memory_reflection
 from simulation.participants import select_encounter_agents
-from simulation.step import simulation_step
+from simulation.experiments import (
+    VALID_RESPONSE_MODES,
+    build_agent_scenario_response,
+    default_behavioral_scenario,
+    save_behavioral_scenario_log,
+    summarize_behavioral_scenario,
+)
+from simulation.step import iter_simulation_step_events
 from simulation.world import get_preset_event, generate_world_event
 
 router = APIRouter()
@@ -126,6 +134,7 @@ async def _encounter_stream(topic: str | None, exchanges: int, agent_ids: list[s
 
 async def _simulation_stream(
     tick_seconds: float,
+    event_delay: float,
     max_ticks: int,
     max_agents: int,
     tick_minutes: int,
@@ -136,16 +145,14 @@ async def _simulation_stream(
 
     try:
         while max_ticks <= 0 or ticks_run < max_ticks:
-            result = await asyncio.to_thread(
-                simulation_step,
+            for event in iter_simulation_step_events(
                 max_agents=max_agents,
                 tick_minutes=tick_minutes,
                 use_llm=use_llm,
-            )
-            ticks_run += 1
-
-            for event in result["events"]:
+            ):
                 yield _event(event)
+                await asyncio.sleep(max(0.0, event_delay))
+            ticks_run += 1
 
             if max_ticks > 0 and ticks_run >= max_ticks:
                 break
@@ -157,6 +164,70 @@ async def _simulation_stream(
         return
 
     yield _event({"type": "simulation_stopped", "ticks_run": ticks_run})
+    yield _event({"type": "done"})
+
+
+async def _behavioral_scenario_stream(
+    title: str | None,
+    prompt: str | None,
+    response_mode: str,
+):
+    if response_mode not in VALID_RESPONSE_MODES:
+        yield _event({"type": "error", "message": f"Unsupported response_mode: {response_mode}"})
+        return
+
+    scenario = default_behavioral_scenario()
+    title = title or scenario["title"]
+    prompt = prompt or scenario["prompt"]
+    date = datetime.now().strftime("%Y-%m-%d")
+    experiment_id = str(uuid.uuid4())[:8]
+
+    yield _event({
+        "type": "behavioral_scenario_started",
+        "experiment_id": experiment_id,
+        "title": title,
+        "prompt": prompt,
+        "response_mode": response_mode,
+    })
+
+    responses: list[dict] = []
+    try:
+        for agent in load_all_agents():
+            response = await asyncio.to_thread(
+                build_agent_scenario_response,
+                agent,
+                prompt,
+                response_mode,
+                date,
+            )
+            responses.append(response)
+            yield _event({
+                "type": "behavioral_agent_response",
+                "experiment_id": experiment_id,
+                **response,
+            })
+
+        summary = summarize_behavioral_scenario(responses, response_mode)
+        result = {
+            "experiment_id": experiment_id,
+            "type": "behavioral_scenario",
+            "date": date,
+            "title": title,
+            "prompt": prompt,
+            "response_mode": response_mode,
+            "responses": responses,
+            "summary": summary,
+        }
+        await asyncio.to_thread(save_behavioral_scenario_log, result)
+        yield _event({
+            "type": "behavioral_scenario_summary",
+            "experiment_id": experiment_id,
+            "summary": summary,
+        })
+    except Exception as e:
+        yield _event({"type": "error", "message": str(e)})
+        return
+
     yield _event({"type": "done"})
 
 
@@ -182,16 +253,30 @@ async def stream_encounter(
     )
 
 
+@router.get("/stream/experiments/behavioral-scenarios")
+async def stream_behavioral_scenario(
+    title: str | None = None,
+    prompt: str | None = None,
+    response_mode: str = "yes_no_reason",
+):
+    return StreamingResponse(
+        _behavioral_scenario_stream(title, prompt, response_mode),
+        media_type="text/event-stream",
+        headers=_SSE_HEADERS,
+    )
+
+
 @router.get("/stream/simulation")
 async def stream_simulation(
     tick_seconds: float = 2.0,
+    event_delay: float = 4.0,
     max_ticks: int = 0,
-    max_agents: int = 4,
+    max_agents: int = 0,
     tick_minutes: int = 5,
     use_llm: bool = True,
 ):
     return StreamingResponse(
-        _simulation_stream(tick_seconds, max_ticks, max_agents, tick_minutes, use_llm),
+        _simulation_stream(tick_seconds, event_delay, max_ticks, max_agents, tick_minutes, use_llm),
         media_type="text/event-stream",
         headers=_SSE_HEADERS,
     )

@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Wei's OCEAN pattern is O7/C5/E5/A5/N4, so daily behavior is shaped by network systems analyst work, a renter household, and a PUMS household income bracket of $200,000 or more. They tend to balance personal ambition with practical limits, responding to city events through the lens of cost, time, and household stability.
 
+## Civic Reasoning Profile
+- **Political orientation:** Technocratic center-left; prefers evidence, measurable outcomes, and practical fixes over slogans.
+- **Institutional trust:** Medium trust in data and competent administration; low patience for vague claims from campaigns or agencies.
+- **Economic worldview:** Systems-oriented; receptive to innovation and platforms, but skeptical when market power creates unfair or inefficient outcomes.
+- **Regulation tolerance:** Medium; wants targeted, evidence-backed rules rather than broad symbolic restrictions.
+- **Consumer convenience priority:** High; time-saving services matter, especially when work is demanding or schedules are tight.
+- **Solidarity radius:** Starts with household budget and neighborhood routines, then considers citywide fairness.
+- **Risk tolerance:** Medium-high; open to experiments if the logic is clear and the downside is bounded.
+- **Information diet:** Local news summaries, search, social feeds, coworkers, group chats, and ballot guides.
+- **Persuasion triggers:** clear evidence.
+- **Suspicion triggers:** vague funding, interest-group slogans, claims without data.
+- **Default ballot heuristic:** If unsure, looks for evidence and mechanism rather than relying on partisan or moral framing.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

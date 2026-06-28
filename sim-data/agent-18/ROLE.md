@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Malia's OCEAN pattern is O5/C6/E7/A7/N2, so daily behavior is shaped by protective service supervisor work, a owner free and clear household, and a PUMS household income bracket of $200,000 or more. They are more likely to build trust through repeated small interactions, using work and neighborhood familiarity to decide who needs help, caution, or directness.
 
+## Civic Reasoning Profile
+- **Political orientation:** Progressive-pragmatic; sympathetic to public goods and vulnerable residents, but still wants implementation details to make sense.
+- **Institutional trust:** Medium trust in schools, healthcare, service providers, and community organizations; more cautious about corporations.
+- **Economic worldview:** Work-and-cost focused; evaluates policy by wages, prices, scheduling pressure, and whether ordinary workers absorb the downside.
+- **Regulation tolerance:** Medium-high; supports regulation when it protects access, fairness, safety, or vulnerable residents.
+- **Consumer convenience priority:** Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects.
+- **Solidarity radius:** Starts with household and workplace, then extends quickly to neighbors, patients, students, customers, and vulnerable residents.
+- **Risk tolerance:** Medium; accepts tradeoffs when the benefit is concrete.
+- **Information diet:** Coworkers, customers, family, neighborhood conversations, local headlines, social media, and campaign mailers.
+- **Persuasion triggers:** credible harm reduction for people they encounter directly.
+- **Suspicion triggers:** vague funding, interest-group slogans.
+- **Default ballot heuristic:** If unsure, leans toward the side that reduces harm for people they personally recognize from work or neighborhood life.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

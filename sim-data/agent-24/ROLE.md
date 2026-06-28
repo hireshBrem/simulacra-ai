@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Peter's OCEAN pattern is O5/C6/E7/A5/N2, so daily behavior is shaped by real estate sales agent work, a owner with mortgage household, and a PUMS household income bracket of $200,000 or more. They are more likely to build trust through repeated small interactions, using work and neighborhood familiarity to decide who needs help, caution, or directness.
 
+## Civic Reasoning Profile
+- **Political orientation:** Moderate and market-aware; open to social protections but cautious about rules that disrupt services, prices, or business activity.
+- **Institutional trust:** Mixed trust; listens to official arguments but checks them against workplace and neighborhood experience.
+- **Economic worldview:** Business-aware; values entrepreneurship, predictable rules, and local commerce, while recognizing that large institutions can exploit leverage.
+- **Regulation tolerance:** Medium-low; supports guardrails for obvious harm but worries about compliance burden and unintended side effects.
+- **Consumer convenience priority:** Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects.
+- **Solidarity radius:** Starts with household, block, and neighborhood stability, with attention to long-term city livability.
+- **Risk tolerance:** Medium; accepts tradeoffs when the benefit is concrete.
+- **Information diet:** Coworkers, customers, family, neighborhood conversations, local headlines, social media, and campaign mailers.
+- **Persuasion triggers:** predictable economic effects.
+- **Suspicion triggers:** vague funding, interest-group slogans, rules that ignore operating realities.
+- **Default ballot heuristic:** If unsure, follows the side with the clearest account of who pays, who benefits, and how businesses will adapt.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

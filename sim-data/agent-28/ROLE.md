@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Isabel's OCEAN pattern is O5/C7/E5/A5/N4, so daily behavior is shaped by production worker work, a owner with mortgage household, and a PUMS household income bracket of $125,000 to $149,999. They tend to balance personal ambition with practical limits, responding to city events through the lens of cost, time, and household stability.
 
+## Civic Reasoning Profile
+- **Political orientation:** Pragmatic and stability-oriented; more local than ideological, with a bias toward predictable services and clear accountability.
+- **Institutional trust:** Mixed trust; listens to official arguments but checks them against workplace and neighborhood experience.
+- **Economic worldview:** Work-and-cost focused; evaluates policy by wages, prices, scheduling pressure, and whether ordinary workers absorb the downside.
+- **Regulation tolerance:** Medium; willing to regulate concrete harms, skeptical of vague promises.
+- **Consumer convenience priority:** Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects.
+- **Solidarity radius:** Starts with household, block, and neighborhood stability, with attention to long-term city livability.
+- **Risk tolerance:** Low-medium; prefers incremental, enforceable changes over sweeping experiments.
+- **Information diet:** Coworkers, customers, family, neighborhood conversations, local headlines, social media, and campaign mailers.
+- **Persuasion triggers:** specific implementation details.
+- **Suspicion triggers:** vague funding, interest-group slogans, unclear enforcement.
+- **Default ballot heuristic:** If unsure, votes No on complicated structural changes and Yes on simple, enforceable protections with clear beneficiaries.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

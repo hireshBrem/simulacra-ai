@@ -1,7 +1,7 @@
 {
   "sim_id": "sf-live",
-  "current_time": "2026-06-28 15:46",
-  "step_number": 4,
+  "current_time": "2026-06-28 17:02",
+  "step_number": 2,
   "tick_minutes": 5,
   "agents": {
     "agent-1": {
@@ -9,30 +9,30 @@
       "name": "Mateo Rivera",
       "zone": "west_side",
       "home_zone": "west_side",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "Mateo Rivera continues with household responsibilities, focusing on tasks at hand.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 2
     },
     "agent-2": {
       "agent_id": "agent-2",
       "name": "James Park",
       "zone": "southeast",
       "home_zone": "southeast",
-      "current_activity": "I continue with my errands, heading to the nearby grocery store to pick up some items for dinner.",
+      "current_activity": "James Park continues with his errands and household responsibilities in Southeast San Francisco.",
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 1
+      "last_active_step": 2
     },
     "agent-3": {
       "agent_id": "agent-3",
       "name": "Wei Chen",
       "zone": "civic_market",
       "home_zone": "civic_market",
-      "current_activity": "Continue working on daily tasks at the civic market.",
-      "current_mood": "neutral",
+      "current_activity": "Wei Chen continues working through daily obligations at the civic market.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
       "last_active_step": 2
@@ -42,154 +42,154 @@
       "name": "Nadia Lewis",
       "zone": "north_side",
       "home_zone": "north_side",
-      "current_activity": "Nadia Lewis continues walking to the next errand destination on her list.",
-      "current_mood": "Focused",
+      "current_activity": "Nadia continues with her errands, moving through the North Side streets.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 3
+      "last_active_step": 2
     },
     "agent-5": {
       "agent_id": "agent-5",
       "name": "Rosa Calderon",
       "zone": "civic_market",
       "home_zone": "civic_market",
-      "current_activity": "Rosa Calderon continues working on her daily tasks at the civic market.",
+      "current_activity": "Rosa continues working through daily obligations at the civic market.",
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 4
+      "last_active_step": 2
     },
     "agent-6": {
       "agent_id": "agent-6",
       "name": "Andre Brooks",
       "zone": "civic_market",
       "home_zone": "civic_market",
-      "current_activity": "Andre Brooks continues working on his daily tasks at the civic market.",
+      "current_activity": "Andre continues working through daily obligations at the civic market.",
       "current_mood": "Focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 4
+      "last_active_step": 1
     },
     "agent-7": {
       "agent_id": "agent-7",
       "name": "Tane Fale",
       "zone": "west_side",
       "home_zone": "west_side",
-      "current_activity": "Tane Fale continues his daily tasks, heading to the next errand on his list.",
-      "current_mood": "neutral",
+      "current_activity": "I continue with my household responsibilities, focusing on the tasks at hand.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 4
+      "last_active_step": 1
     },
     "agent-8": {
       "agent_id": "agent-8",
       "name": "Connor Wallace",
       "zone": "southeast",
       "home_zone": "southeast",
-      "current_activity": "I continue with my errands, stopping by a local store to pick up some necessary items.",
-      "current_mood": "focused",
+      "current_activity": "I continue with my errands and household responsibilities.",
+      "current_mood": "practical",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 4
+      "last_active_step": 1
     },
     "agent-9": {
       "agent_id": "agent-9",
       "name": "Leilani Cruz",
       "zone": "neighborhood_work",
       "home_zone": "neighborhood_work",
-      "current_activity": "working through daily obligations",
-      "current_mood": "neutral",
+      "current_activity": "Leilani Cruz focuses on completing market research tasks at work.",
+      "current_mood": "Focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-10": {
       "agent_id": "agent-10",
       "name": "Diego Morales",
       "zone": "north_side",
       "home_zone": "north_side",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "Diego Morales continues with his errands, blending in with the North Side streets activity.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-11": {
       "agent_id": "agent-11",
       "name": "Arjun Patel",
       "zone": "west_side",
       "home_zone": "west_side",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "I continue handling my errands and household responsibilities in west_side.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-12": {
       "agent_id": "agent-12",
       "name": "Elena Yazzie",
       "zone": "southeast",
       "home_zone": "southeast",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "Finishing up the afternoon errands in the southeast neighborhood.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-13": {
       "agent_id": "agent-13",
       "name": "Malik Johnson",
       "zone": "civic_market",
       "home_zone": "civic_market",
-      "current_activity": "working through daily obligations",
-      "current_mood": "neutral",
+      "current_activity": "Malik Johnson continues working on editing tasks at the civic market.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-14": {
       "agent_id": "agent-14",
       "name": "Samuel Miller",
       "zone": "southeast",
       "home_zone": "southeast",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "Samuel continues handling his errands and household responsibilities in the southeast neighborhood.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-15": {
       "agent_id": "agent-15",
       "name": "Minh Nguyen",
       "zone": "neighborhood_work",
       "home_zone": "neighborhood_work",
-      "current_activity": "working through daily obligations",
-      "current_mood": "neutral",
+      "current_activity": "Minh Nguyen continues working on medical records tasks at the office.",
+      "current_mood": "focused anxious",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-16": {
       "agent_id": "agent-16",
       "name": "Avery Thompson",
       "zone": "west_side",
       "home_zone": "west_side",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "Avery Thompson continues with her household responsibilities, focusing on the tasks at hand.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-17": {
       "agent_id": "agent-17",
       "name": "Aiyana Begay",
       "zone": "north_side",
       "home_zone": "north_side",
-      "current_activity": "handling errands and household responsibilities",
-      "current_mood": "neutral",
+      "current_activity": "Aiyana Begay continues handling errands and household responsibilities on the North Side.",
+      "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": -1
+      "last_active_step": 1
     },
     "agent-18": {
       "agent_id": "agent-18",

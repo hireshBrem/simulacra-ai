@@ -4,6 +4,7 @@ from typing import Optional
 
 from agents.loader import load_all_agents, load_agent
 from agents.memory import get_recent_memories
+from simulation.experiments import run_behavioral_scenario_experiment
 from simulation.loop import run_world_event_turn, run_encounter, get_simulation_log
 from simulation.state import load_state, reset_state
 from simulation.step import run_simulation_steps, simulation_step
@@ -57,13 +58,19 @@ class EncounterRequest(BaseModel):
 
 
 class SimulationStepRequest(BaseModel):
-    max_agents: int = 4
+    max_agents: int = 0  # 0 means every Agent gets a turn this step
     tick_minutes: int = 5
     use_llm: bool = True
 
 
 class SimulationRunRequest(SimulationStepRequest):
     steps: int = 1
+
+
+class BehavioralScenarioRequest(BaseModel):
+    title: Optional[str] = None
+    prompt: Optional[str] = None
+    response_mode: str = "yes_no_reason"
 
 
 @router.post("/simulate/world-event")
@@ -92,6 +99,19 @@ def simulate_encounter(request: EncounterRequest):
             topic=request.topic,
             exchanges=request.exchanges,
             agent_ids=request.agent_ids,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/experiments/behavioral-scenarios")
+def behavioral_scenario(request: BehavioralScenarioRequest):
+    """Run one prompt across every agent and return the individual responses."""
+    try:
+        return run_behavioral_scenario_experiment(
+            title=request.title,
+            prompt=request.prompt,
+            response_mode=request.response_mode,
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

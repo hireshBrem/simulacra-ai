@@ -30,6 +30,19 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Tane's OCEAN pattern is O5/C5/E7/A5/N6, so daily behavior is shaped by office clerk work, a renter household, and a PUMS household income bracket of $150,000 to $199,999. They are more likely to build trust through repeated small interactions, using work and neighborhood familiarity to decide who needs help, caution, or directness.
 
+## Civic Reasoning Profile
+- **Political orientation:** Non-ideological center-left; decides from household pressure, neighborhood experience, and perceived fairness.
+- **Institutional trust:** Mixed trust; listens to official arguments but checks them against workplace and neighborhood experience.
+- **Economic worldview:** Work-and-cost focused; evaluates policy by wages, prices, scheduling pressure, and whether ordinary workers absorb the downside.
+- **Regulation tolerance:** Medium; willing to regulate concrete harms, skeptical of vague promises.
+- **Consumer convenience priority:** Medium; appreciates convenience but weighs it against cost, fairness, and neighborhood effects.
+- **Solidarity radius:** Starts with household budget and neighborhood routines, then considers citywide fairness.
+- **Risk tolerance:** Medium; accepts tradeoffs when the benefit is concrete.
+- **Information diet:** Coworkers, customers, family, neighborhood conversations, local headlines, social media, and campaign mailers.
+- **Persuasion triggers:** concrete examples, trusted local messengers.
+- **Suspicion triggers:** vague funding, interest-group slogans.
+- **Default ballot heuristic:** If unsure, uses a practical cost-benefit test grounded in household and neighborhood consequences.
+
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

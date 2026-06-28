@@ -10,3 +10,5 @@
 [2026-06-27 00:09] I just got off the phone with Mateo Rivera, discussing the US Senator's proposed bill to regulate advanced AI models, and I have to say, it's got me thinking about the potential impact on our community here in Mission. Mateo made a great point about finding a balance between innovation and regulation, and I couldn't agree more - it's not just about the tech industry, but about the people whose jobs and lives could be affected by these advancements. We talked about the need for CEOs like Sam Altman and Dario Amodei to weigh in on the proposed regulations and find a way forward that works for everyone.
 
 [2026-06-28 14:40] Read about an AI safety researcher's open letter on the limitations of current alignment techniques for advanced AI models, which made me worry about the implications for our community in Mission.
+
+[2026-06-28 16:46] I reflected on being in neighborhood_work while working through daily obligations.

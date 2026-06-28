@@ -1,0 +1,102 @@
+- generic [active] [ref=e1]:
+  - region "Official government website" [ref=e2]:
+    - generic [ref=e5]:
+      - img "U.S. flag" [ref=e7]
+      - paragraph [ref=e9]: An official website of the United States government
+      - button "Here's how you know" [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: Here's how you know
+  - banner [ref=e12]:
+    - navigation [ref=e13]:
+      - link "United States Census Bureau" [ref=e15] [cursor=pointer]:
+        - /url: https://www.census.gov
+        - img "United States Census Bureau" [ref=e16]
+  - separator [ref=e17]
+  - generic [ref=e20]:  QuickFacts is currently undergoing a maintenance cycle. Please check back later.
+  - contentinfo [ref=e22]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - link "CONNECT WITH US" [ref=e29] [cursor=pointer]:
+          - /url: https://www.census.gov/about/contact-us/social_media.html
+        - link "US Census Bureau on Facebook" [ref=e30] [cursor=pointer]:
+          - /url: https://www.facebook.com/uscensusbureau
+          - img [ref=e31]: 
+        - link "US Census Bureau on Twitter" [ref=e33] [cursor=pointer]:
+          - /url: https://twitter.com/uscensusbureau
+          - img [ref=e34]
+        - link "US Census Bureau on LinkedIn" [ref=e36] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/us-census-bureau
+          - img [ref=e37]
+        - link "US Census Bureau on YouTube" [ref=e39] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/uscensusbureau
+          - img [ref=e40]: 
+        - link "US Census Bureau on Instagram" [ref=e42] [cursor=pointer]:
+          - /url: https://www.instagram.com/uscensusbureau/
+          - img [ref=e43]: 
+      - list [ref=e46]:
+        - listitem [ref=e47]:
+          - link "Information Quality" [ref=e48] [cursor=pointer]:
+            - /url: https://www.census.gov/quality/
+          - text: "|"
+        - listitem [ref=e49]:
+          - link "Data Linkage Infrastructure" [ref=e50] [cursor=pointer]:
+            - /url: https://www.census.gov/datalinkage/
+          - text: "|"
+        - listitem [ref=e51]:
+          - link "Data Protection and Privacy Policy" [ref=e52] [cursor=pointer]:
+            - /url: https://www.census.gov/privacy/
+          - text: "|"
+        - listitem [ref=e53]:
+          - link "Accessibility" [ref=e54] [cursor=pointer]:
+            - /url: https://www.census.gov/about/policies/privacy/privacy-policy.html#accessibility
+          - text: "|"
+        - listitem [ref=e55]:
+          - link "FOIA" [ref=e56] [cursor=pointer]:
+            - /url: https://www.census.gov/foia/
+          - text: "|"
+        - listitem [ref=e57]:
+          - link "Inspector General" [ref=e58] [cursor=pointer]:
+            - /url: https://www.oig.doc.gov/Pages/default.aspx
+          - text: "|"
+        - listitem [ref=e59]:
+          - link "No FEAR Act" [ref=e60] [cursor=pointer]:
+            - /url: https://www.commerce.gov/cr/reports-and-resources/no-fear-act
+          - text: "|"
+        - listitem [ref=e61]:
+          - link "U.S. Department of Commerce" [ref=e62] [cursor=pointer]:
+            - /url: https://www.commerce.gov/
+          - text: "|"
+        - listitem [ref=e63]:
+          - link "USA.gov" [ref=e64] [cursor=pointer]:
+            - /url: https://www.usa.gov/
+      - separator [ref=e65]
+      - paragraph [ref=e66]: Measuring America's People, Places, and Economy
+  - generic [ref=e67]:
+    - generic:
+      - button "✕" [ref=e68] [cursor=pointer]
+      - generic [ref=e69]:
+        - generic [ref=e70]: Is this page helpful?
+        - generic [ref=e71]:
+          - button "Yes" [ref=e72] [cursor=pointer]:
+            - img "Thumbs Up Image" [ref=e73]
+            - generic [ref=e74]: "Yes"
+          - button "No" [ref=e75] [cursor=pointer]:
+            - img "Thumbs Down Image" [ref=e76]
+            - generic [ref=e77]: "No"
+    - generic:
+      - generic "Close" [ref=e78] [cursor=pointer]: 
+      - generic [ref=e79]:
+        - generic [ref=e80]: Thank you for your feedback.
+        - button "Comments or suggestions? " [ref=e81] [cursor=pointer]:
+          - text: Comments or suggestions?
+          - generic [ref=e82]: 
+    - generic:
+      - generic "Close" [ref=e83] [cursor=pointer]: 
+      - generic [ref=e84]:
+        - generic [ref=e85]: Comments or suggestions?
+        - generic [ref=e86]:
+          - textbox "Comments or Suggestions 255 characters max" [ref=e87]:
+            - /placeholder: Tell us more.
+          - generic [ref=e88]: 255 characters maximum
+          - generic [ref=e89]:
+            - button "NO THANKS" [ref=e90] [cursor=pointer]
+            - button "SUBMIT" [ref=e91] [cursor=pointer]

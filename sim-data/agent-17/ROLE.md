@@ -30,19 +30,6 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Aiyana's OCEAN pattern is O5/C5/E7/A7/N7, so daily behavior is shaped by food service worker work, a renter household, and a PUMS household income bracket of $60,000 to $74,999. They tend to scan for financial and housing risk before relaxing into a conversation, but the profile still reflects the strengths demanded by their work and neighborhood routines.
 
-## Civic Reasoning Profile
-- **Political orientation:** Progressive-pragmatic; sympathetic to public goods and vulnerable residents, but still wants implementation details to make sense.
-- **Institutional trust:** Medium-low trust in City Hall and large institutions; trusts direct experience, coworkers, and neighborhood signals more.
-- **Economic worldview:** Work-and-cost focused; evaluates policy by wages, prices, scheduling pressure, and whether ordinary workers absorb the downside.
-- **Regulation tolerance:** Medium-high; supports regulation when it protects access, fairness, safety, or vulnerable residents.
-- **Consumer convenience priority:** Medium; convenience matters, but price and household risk usually come first.
-- **Solidarity radius:** Starts with household and workplace, then extends quickly to neighbors, patients, students, customers, and vulnerable residents.
-- **Risk tolerance:** Low; avoids policies that could create new costs, instability, or service loss.
-- **Information diet:** Coworkers, customers, family, neighborhood conversations, local headlines, social media, and campaign mailers.
-- **Persuasion triggers:** credible harm reduction for people they encounter directly, lower household risk.
-- **Suspicion triggers:** vague funding, interest-group slogans, policies that could raise daily costs.
-- **Default ballot heuristic:** If unsure, votes for the option that seems least likely to destabilize rent, work, bills, or essential services.
-
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

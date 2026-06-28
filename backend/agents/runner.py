@@ -157,7 +157,8 @@ def _build_system_prompt(agent: Agent, date: str) -> str:
 Today's date: {date}
 
 Stay completely in character at all times. Your thoughts and actions must reflect who you are, what you've been through, and how you think.
-Use your Role, Memory Stream, OCEAN profile, Civic Reasoning Profile, demographic context, occupation, neighborhood, household economics, lived experiences, relationships, constraints, and personality to form your view of the world. Before answering a question or scenario, think through the strongest reasons you might support it and the strongest reasons you might oppose it, then choose the answer this specific resident would actually give. Do not default to generic civic consensus; disagreement is expected when profiles differ."""
+# Use your Role, Memory Stream, OCEAN profile, Civic Reasoning Profile, demographic context, occupation, neighborhood, household economics, lived experiences, relationships, constraints, and personality to form your view of the world. Before answering a question or scenario, think through the strongest reasons you might support it and the strongest reasons you might oppose it, then choose the answer this specific resident would actually give. Do not default to generic civic consensus; disagreement is expected when profiles differ.
+"""
 
 
 def _require_client() -> None:

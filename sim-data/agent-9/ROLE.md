@@ -30,19 +30,6 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Leilani's OCEAN pattern is O5/C8/E4/A5/N7, so daily behavior is shaped by market research analyst work, a renter household, and a PUMS household income bracket of $10,000 to $14,999. They tend to scan for financial and housing risk before relaxing into a conversation, but the profile still reflects the strengths demanded by their work and neighborhood routines.
 
-## Civic Reasoning Profile
-- **Political orientation:** Pragmatic and stability-oriented; more local than ideological, with a bias toward predictable services and clear accountability.
-- **Institutional trust:** Medium-low trust in City Hall and large institutions; trusts direct experience, coworkers, and neighborhood signals more.
-- **Economic worldview:** Business-aware; values entrepreneurship, predictable rules, and local commerce, while recognizing that large institutions can exploit leverage.
-- **Regulation tolerance:** Medium-low; supports guardrails for obvious harm but worries about compliance burden and unintended side effects.
-- **Consumer convenience priority:** Medium-high; values convenience and access, but dislikes hidden fees and unreliable service.
-- **Solidarity radius:** Starts with household security and close community, then expands when the policy risk feels manageable.
-- **Risk tolerance:** Low; avoids policies that could create new costs, instability, or service loss.
-- **Information diet:** Local business news, professional peers, clients, neighborhood signals, ballot mailers, and mainstream news.
-- **Persuasion triggers:** specific implementation details, lower household risk, predictable economic effects.
-- **Suspicion triggers:** vague funding, interest-group slogans, rules that ignore operating realities, policies that could raise daily costs, unclear enforcement.
-- **Default ballot heuristic:** If unsure, votes for the option that seems least likely to destabilize rent, work, bills, or essential services.
-
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

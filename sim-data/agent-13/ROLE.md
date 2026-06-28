@@ -30,19 +30,6 @@ OCEAN scores are synthetic but rule-derived, not random. Baselines start at 5, t
 ## Behavioral Profile
 Malik's OCEAN pattern is O7/C7/E4/A5/N3, so daily behavior is shaped by writer and editor work, a owner with mortgage household, and a PUMS household income bracket of $150,000 to $199,999. They tend to balance personal ambition with practical limits, responding to city events through the lens of cost, time, and household stability.
 
-## Civic Reasoning Profile
-- **Political orientation:** Progressive-pragmatic; sympathetic to public goods and vulnerable residents, but still wants implementation details to make sense.
-- **Institutional trust:** Medium trust in formal institutions when rules are clear, with skepticism toward rushed or poorly explained changes.
-- **Economic worldview:** Pragmatic mixed economy; supports markets and public rules when each seems suited to the problem.
-- **Regulation tolerance:** Medium; willing to regulate concrete harms, skeptical of vague promises.
-- **Consumer convenience priority:** Medium-high; values convenience and access, but dislikes hidden fees and unreliable service.
-- **Solidarity radius:** Starts with household, block, and neighborhood stability, with attention to long-term city livability.
-- **Risk tolerance:** Low-medium; prefers incremental, enforceable changes over sweeping experiments.
-- **Information diet:** Local news, family, neighbors, campaign mailers, and long-running memories of city change.
-- **Persuasion triggers:** clear evidence, specific implementation details.
-- **Suspicion triggers:** vague funding, interest-group slogans, unclear enforcement.
-- **Default ballot heuristic:** If unsure, votes No on complicated structural changes and Yes on simple, enforceable protections with clear beneficiaries.
-
 ## Communication Style
 - Speaks from concrete local experience before abstract principles.
 - Notices money, time, and housing constraints as practical facts in conversation.

@@ -10,6 +10,7 @@ import type {
 } from '@/lib/simBus'
 
 type ResponseMode = 'yes_no_reason' | 'freeform'
+type BreakdownMode = 'neighborhood' | 'income'
 
 interface BehavioralScenariosProps {
   isRunning: boolean
@@ -18,6 +19,7 @@ interface BehavioralScenariosProps {
 }
 
 type ReasonSummary = { reason: string; count: number; example: string }
+type VoteBreakdownRow = { label: string; yes: number; no: number; total: number }
 
 const PROP_X_PROMPT = 'San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence.'
 
@@ -36,6 +38,7 @@ export default function BehavioralScenarios({
   const [summary, setSummary] = useState<BehavioralScenarioSummary | null>(null)
   const [status, setStatus] = useState('Ready')
   const [activeResponseMode, setActiveResponseMode] = useState<ResponseMode>('yes_no_reason')
+  const [breakdownMode, setBreakdownMode] = useState<BreakdownMode>('neighborhood')
 
   useEffect(() => {
     const handler = (event: SimEvent) => {
@@ -98,6 +101,11 @@ export default function BehavioralScenarios({
   }), [sortedResponses])
   const topReasons = summary?.top_reasons ?? interimReasons
   const shouldShowReasonSummary = activeResponseMode === 'yes_no_reason' && (activeExperimentId || responses.length > 0)
+  const voteBreakdown = useMemo(
+    () => buildVoteBreakdown(sortedResponses, breakdownMode),
+    [breakdownMode, sortedResponses],
+  )
+  const shouldShowVoteBreakdown = activeResponseMode === 'yes_no_reason' && (activeExperimentId || responses.length > 0)
 
   const handleRun = () => {
     if (runDisabled) return
@@ -258,7 +266,100 @@ export default function BehavioralScenarios({
           </div>
         </div>
       </div>
+
+      {shouldShowVoteBreakdown && (
+        <VoteBreakdownPanel
+          mode={breakdownMode}
+          onModeChange={setBreakdownMode}
+          rows={voteBreakdown}
+        />
+      )}
     </section>
+  )
+}
+
+function VoteBreakdownPanel({
+  mode,
+  onModeChange,
+  rows,
+}: {
+  mode: BreakdownMode
+  onModeChange: (mode: BreakdownMode) => void
+  rows: VoteBreakdownRow[]
+}) {
+  return (
+    <div className="mt-4 border border-slate-800 bg-[#05070c] px-3 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-2">
+        <div>
+          <div className="text-sm text-slate-200">Yes/No Splits</div>
+          <div className="mt-1 text-xs text-slate-500">
+            Broken down by {mode === 'neighborhood' ? 'neighborhood' : 'household income bracket'}
+          </div>
+        </div>
+        <div className="flex border border-slate-700 text-xs">
+          <button
+            type="button"
+            onClick={() => onModeChange('neighborhood')}
+            className={[
+              'px-3 py-2',
+              mode === 'neighborhood'
+                ? 'bg-slate-200 text-black'
+                : 'text-slate-400 hover:bg-slate-800',
+            ].join(' ')}
+          >
+            Neighborhood
+          </button>
+          <button
+            type="button"
+            onClick={() => onModeChange('income')}
+            className={[
+              'border-l border-slate-700 px-3 py-2',
+              mode === 'income'
+                ? 'bg-slate-200 text-black'
+                : 'text-slate-400 hover:bg-slate-800',
+            ].join(' ')}
+          >
+            Income
+          </button>
+        </div>
+      </div>
+
+      {rows.length ? (
+        <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+          {rows.map(row => (
+            <VoteBreakdownItem key={row.label} row={row} />
+          ))}
+        </div>
+      ) : (
+        <div className="px-1 py-6 text-sm text-slate-600">
+          Vote breakdown will appear as Yes/No responses stream in.
+        </div>
+      )}
+    </div>
+  )
+}
+
+function VoteBreakdownItem({ row }: { row: VoteBreakdownRow }) {
+  const yesPct = row.total ? Math.round((row.yes / row.total) * 100) : 0
+  const noPct = row.total ? 100 - yesPct : 0
+
+  return (
+    <div className="border border-slate-800 bg-black/40 px-3 py-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 truncate text-sm text-slate-200" title={row.label}>
+          {row.label}
+        </div>
+        <div className="shrink-0 text-xs text-slate-500">{row.total}</div>
+      </div>
+      <div className="mt-3 flex h-2 overflow-hidden bg-slate-800">
+        <div className="bg-emerald-500" style={{ width: `${yesPct}%` }} />
+        <div className="bg-red-500" style={{ width: `${noPct}%` }} />
+      </div>
+      <div className="mt-2 flex items-center justify-between text-xs">
+        <span className="text-emerald-300">Yes {row.yes} ({yesPct}%)</span>
+        <span className="text-red-300">No {row.no} ({noPct}%)</span>
+      </div>
+    </div>
   )
 }
 
@@ -269,25 +370,33 @@ function ReasonList({
   title: string
   reasons: ReasonSummary[]
 }) {
-  const rows = Array.from({ length: 3 }, (_, index) => reasons[index])
+  const rows = reasons
+    .filter(reason => reason.reason.trim())
+    .slice(0, 3)
+  const missingCount = 3 - rows.length
 
   return (
     <div className="border border-slate-800 bg-[#07090f] px-3 py-3">
       <div className="text-xs text-slate-500">{title}</div>
       <div className="mt-2 space-y-2">
-        {rows.map((reason, index) => reason ? (
+        {rows.map((reason, index) => (
           <div key={reason.reason} className="text-sm leading-5" title={reason.example}>
             <span className="text-slate-600">{index + 1}. </span>
             <span className="text-slate-200">{reason.reason}</span>
             <span className="text-slate-600"> / </span>
             <span className="text-slate-500">{reason.count}</span>
           </div>
-        ) : (
-          <div key={`empty-${index}`} className="text-sm leading-5 text-slate-600">
-            <span className="text-slate-700">{index + 1}. </span>
-            awaiting responses
-          </div>
         ))}
+        {rows.length === 0 && (
+          <div className="text-sm leading-5 text-slate-600">No reasons yet.</div>
+        )}
+        {rows.length > 0 && missingCount > 0 && (
+          <div className="text-xs leading-4 text-slate-600">
+            {rows.length === 1
+              ? 'Only 1 distinct reason found so far.'
+              : `Only ${rows.length} distinct reasons found so far.`}
+          </div>
+        )}
       </div>
     </div>
   )
@@ -309,6 +418,41 @@ function buildTopReasons(responses: BehavioralScenarioResponse[], vote: 'Yes' | 
   return [...grouped.values()]
     .sort((left, right) => right.count - left.count || left.reason.localeCompare(right.reason))
     .slice(0, 3)
+}
+
+function buildVoteBreakdown(
+  responses: BehavioralScenarioResponse[],
+  mode: BreakdownMode,
+): VoteBreakdownRow[] {
+  const grouped = new Map<string, VoteBreakdownRow>()
+
+  responses.forEach(response => {
+    if (response.vote !== 'Yes' && response.vote !== 'No') return
+
+    const config = AGENT_CONFIG[response.agent_id]
+    const label = mode === 'neighborhood'
+      ? config?.neighborhood ?? 'Unknown neighborhood'
+      : config?.incomeBracket ?? 'Unknown income'
+    const current = grouped.get(label) ?? { label, yes: 0, no: 0, total: 0 }
+
+    if (response.vote === 'Yes') current.yes += 1
+    if (response.vote === 'No') current.no += 1
+    current.total += 1
+    grouped.set(label, current)
+  })
+
+  return [...grouped.values()].sort((left, right) => {
+    if (mode === 'income') {
+      return incomeBracketRank(left.label) - incomeBracketRank(right.label)
+    }
+    return right.total - left.total || left.label.localeCompare(right.label)
+  })
+}
+
+function incomeBracketRank(label: string): number {
+  const firstNumber = label.match(/\$([\d,]+)/)?.[1]
+  if (!firstNumber) return Number.MAX_SAFE_INTEGER
+  return Number(firstNumber.replaceAll(',', ''))
 }
 
 function reasonLabel(reason: string): string {

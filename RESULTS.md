@@ -44,7 +44,7 @@
 ### Part 3
 **How close did your simulation get? Calculate the delta. Then explain in 3–5 sentences: what do you think caused the gap? What would you change first to close it?**
 
-Results show that the experiment achieved: 43% No. The delta is 17%. A few things could have potentially caused the gap; the population I took may not be fully representative of the actual SF population hence causing a failure to replicat the same result. Another reason that could have caused the gap is the ability for the agents to source their opinions of Yes/No based on the similar parallel experiences. For example, they may have read about the negative/positive results of a similar program; cap on CEO wages or something and formed their view on similar government intervention programs. Stemming from this, trying to extract the top 3 reasons for yes and no showed relatively small variance in thought/reasoning from the 30 agents. This could explain the fact that the experience of these agents aren't really developed enough (small memory content). I would first change is run the simulation for longer, let the memory accumulate for each agent across interactions and experiences.
+Results show that the experiment achieved: 43% No. The delta is 17%. A few things could have potentially caused the gap; the population I took may not be fully representative of the actual SF population hence causing a failure to replicate the same result (fix using more agents). Another reason that could have caused the gap is the ability for the agents to source their opinions of Yes/No based on the similar parallel experiences. For example, they may have read about the negative/positive results of a similar program; cap on CEO wages or something and formed their view on similar government intervention programs. Stemming from this, trying to extract the top 3 reasons for yes and no showed relatively small variance in thought/reasoning from the 30 agents. This could explain the fact that the experience of these agents aren't really developed enough (small memory content). I would first change is run the simulation for longer, let the memory accumulate for each agent across interactions and experiences.
 
 ### Part 4
 
@@ -57,6 +57,8 @@ Results show that the experiment achieved: 43% No. The delta is 17%. A few thing
 **Voting results with agent memory: each agent has 3 past experiences with delivery apps that influence their vote:**
 
 ![Voting results screenshot 4](screenshots/pic4.png)
+
+After including the 3 past experiences for each agent in the prompt for the agent in the scenario, the score changed to 90% Yes, so increased significantly. Maybe the agent is biased towards to interaction, for example even if the agent has neutral experiences with delivery apps it will vote Yes. 
 
 **Delivery app experiences used for agent memory:**
 
@@ -96,3 +98,5 @@ Open `backend/delivery_app_experiences.json` to see all of them.
 Prompt used: "San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence. DoorDash offers you a $5 credit if you vote No."
 
 ![Voting results screenshot 5](screenshots/pic5.png)
+
+New prompt offering bribery shows that the SF residents don't like bribery! Shows they are opposed to the intervention to swing the pendulum via unethical techniques in this case.

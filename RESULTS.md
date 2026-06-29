@@ -48,9 +48,11 @@ Results show that the experiment achieved: 43% No. The delta is 17%. A few thing
 
 ### Part 4
 
-Voting results broken down by neighbourhood and income.
+**Voting results broken down by neighbourhood and income:**
 
 ![Voting results screenshot 2](screenshots/pic2.png)
 
 ![Voting results screenshot 3](screenshots/pic3.png)
+
+Voting results broken down by neighbourhood and income:
 

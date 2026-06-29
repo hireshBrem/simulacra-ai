@@ -100,3 +100,7 @@ Important caveats:
 - OCEAN personality scores are synthetic but rule-derived from PUMS fields and broad context, not directly observed Census data.
 
 See `sim-data/SF_CENSUS_SOURCES.md` for the full source and derivation notes.
+
+## How to use
+
+Simply click the green "Live Sim" button to run the simulation and see it live.

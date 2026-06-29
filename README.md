@@ -1,19 +1,19 @@
-# Sapiaverse
+# Sapiaverse Demo
 
-Sapiaverse is an LLM-powered social simulation of synthetic San Francisco residents. Agents have Roles, Memory Streams, persistent simulation state, and can react to world events, encounter one another, converse, and respond to behavioral scenarios.
+Sapiaverse Demo is an LLM-powered social simulation of synthetic San Francisco residents. It models 30 PUMS-grounded agents with Roles, Memory Streams, persistent simulation state, and in-character responses to world events, encounters, and behavioral scenarios.
 
-The project has two main parts:
+The app is split into two parts:
 
-- `backend/`: FastAPI service that loads agents, runs simulation steps, streams events over SSE, calls Groq for the live simulation, and calls Anthropic Claude for behavioral scenarios.
-- `frontend/`: Next.js + Phaser interface for watching and controlling the simulation.
+- `backend/`: FastAPI service that loads agents, advances the simulation, streams events over SSE, calls Groq for live simulation turns, and calls Anthropic Claude for behavioral scenario experiments.
+- `frontend/`: Next.js + Phaser interface for watching the simulated city, running the live simulation, and launching behavioral scenarios.
 
 ## Prerequisites
 
 - Python 3.10+
 - Node.js 20+
 - npm
-- A Groq API key for LLM-backed simulation calls
-- An Anthropic API key for behavioral scenario calls
+- A Groq API key for LLM-backed simulation calls.
+- An Anthropic API key for behavioral scenario calls.
 
 ## Setup
 
@@ -37,6 +37,8 @@ SIM_LOGS_PATH=../sim-logs
 MODEL=llama-3.3-70b-versatile
 BEHAVIOR_MODEL=claude-sonnet-4-5-20250929
 ```
+
+`GROQ_API_KEY` is required for LLM-backed simulation turns. `ANTHROPIC_API_KEY` is required for behavioral scenario experiments.
 
 Then install the frontend dependencies:
 
@@ -72,34 +74,16 @@ The frontend expects the backend at:
 http://localhost:8000/api
 ```
 
-## Useful Backend Endpoints
-
-```text
-GET  /api/agents
-GET  /api/agents/{agent_id}
-GET  /api/agents/{agent_id}/memory
-GET  /api/simulation/state
-POST /api/simulation/reset
-POST /api/simulation/step
-POST /api/simulation/run
-GET  /api/stream/simulation
-GET  /api/stream/world-event
-GET  /api/stream/encounter
-GET  /api/stream/experiments/behavioral-scenarios
-```
-
-FastAPI docs are available while the backend is running:
-
-```text
-http://localhost:8000/docs
-```
-
-## Data Sources Used
+## Data And Logs
 
 The generated resident Agents live in `sim-data/agent-1` through `sim-data/agent-30`. Each Agent has:
 
 - `ROLE.md`: stable identity, demographics, communication style, personality, beliefs, and behavioral constraints.
 - `MEMORY.md`: chronological Memory Stream for the Agent.
+
+Persistent simulation state is stored in `sim-data/SIM_STATE.json`. Simulation and experiment logs are written to `sim-logs/`.
+
+## Data Sources Used
 
 The synthetic population is based on:
 
@@ -116,36 +100,3 @@ Important caveats:
 - OCEAN personality scores are synthetic but rule-derived from PUMS fields and broad context, not directly observed Census data.
 
 See `sim-data/SF_CENSUS_SOURCES.md` for the full source and derivation notes.
-
-## Regenerating Agent Data
-
-The data generation script is:
-
-```bash
-python3 tools/generate_sf_residents.py
-```
-
-Run this from the repository root. It rewrites generated Agent files under `sim-data/`, so commit or back up any simulation memories you want to keep before regenerating.
-
-## Development Checks
-
-Frontend lint:
-
-```bash
-cd frontend
-npm run lint
-```
-
-Backend smoke check:
-
-```bash
-cd backend
-source .venv/bin/activate
-uvicorn main:app --reload --port 8000
-```
-
-Then visit:
-
-```text
-http://localhost:8000/
-```

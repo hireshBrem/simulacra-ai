@@ -7,7 +7,7 @@ load_dotenv()
 from api.routes import router
 from api.stream import router as stream_router
 
-app = FastAPI(title="Sapiaverse API", description="LLM-powered social simulation")
+app = FastAPI(title="Sapiaverse Demo API", description="LLM-powered social simulation")
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,4 +23,4 @@ app.include_router(stream_router, prefix="/api")
 
 @app.get("/")
 def root():
-    return {"status": "running", "service": "sapiaverse-backend"}
+    return {"status": "running", "service": "sapiaverse-demo-backend"}

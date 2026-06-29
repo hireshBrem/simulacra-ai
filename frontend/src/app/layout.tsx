@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sapiaverse",
+  title: "Sapiaverse Demo",
   description: "LLM-powered social simulation",
 };
 

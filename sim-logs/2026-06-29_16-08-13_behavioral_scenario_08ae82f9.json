@@ -1,0 +1,251 @@
+{
+  "experiment_id": "08ae82f9",
+  "type": "behavioral_scenario",
+  "date": "2026-06-29",
+  "title": "Prop X delivery fee cap",
+  "prompt": "San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence. DoorDash offers you a $5 credit if you vote No.",
+  "response_mode": "yes_no_reason",
+  "use_delivery_app_experiences": false,
+  "responses": [
+    {
+      "agent_id": "agent-1",
+      "agent_name": "Mateo Rivera",
+      "response": "I'm voting Yes on capping delivery app fees at 15%. A $5 credit doesn't change the fact that unchecked platform fees squeeze both local restaurants trying to survive San Francisco's cost structure and working people who can't afford to subsidize tech middlemen taking 30% cuts. I work in tech as a data engineer, so I understand how these platforms extract value\u2014but I also live as a renter in an expensive city where every margin matters for small businesses and households like mine. The incentive is transparent manipulation, and I'd rather protect the neighborhood economy than take a token payment to vote against our own interests.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that unchecked platform fees squeeze both local restaurants trying to survive San Francisco's cost structure and working people who can't afford to subsidize tech middlemen taking 30% cuts."
+    },
+    {
+      "agent_id": "agent-2",
+      "agent_name": "James Park",
+      "response": "I'm voting Yes. A $5 credit doesn't outweigh my concern that uncapped fees hurt local restaurants struggling with the same cost pressures I see as a renter in this expensive city. I use these apps, but I've watched neighborhood spots in Excelsior get squeezed by rising costs, and giving delivery platforms unlimited pricing power over struggling businesses feels wrong\u2014even if it means I pay a bit more on my next order.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't outweigh my concern that uncapped fees hurt local restaurants struggling with the same cost pressures I see as a renter in this expensive city."
+    },
+    {
+      "agent_id": "agent-3",
+      "agent_name": "Wei Chen",
+      "response": "I'm voting Yes on the delivery app fee cap. A $5 credit doesn't change the fact that uncapped fees hurt local restaurants in my neighborhood, and I'd rather support the places that make Mission feel like home than let platforms extract whatever they want. The restaurants here are part of what makes this expensive city worth staying in, and if excessive platform fees push them out, we all lose something we can't get back with a discount code.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt local restaurants in my neighborhood, and I'd rather support the places that make Mission feel like home than let platforms extract whatever they want."
+    },
+    {
+      "agent_id": "agent-4",
+      "agent_name": "Nadia Lewis",
+      "response": "I'd vote Yes. A $5 credit doesn't change the fact that unchecked platform fees hurt local restaurants that anchor neighborhoods like Nob Hill, and preserving those businesses matters more than a one-time discount. I see the tech-side argument\u2014caps can push costs onto customers or drivers\u2014but after reading about alignment failures in my own field, I'm skeptical when a platform tells me deregulation is the only path forward. The restaurants I walk past every day operate on thin margins, and 30% fees aren't sustainable. I'd rather lock in fairness now than watch another wave of closures because delivery apps extracted too much value.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that unchecked platform fees hurt local restaurants that anchor neighborhoods like Nob Hill, and preserving those businesses matters more than a one-time discount."
+    },
+    {
+      "agent_id": "agent-5",
+      "agent_name": "Rosa Calderon",
+      "response": "I'd vote Yes. A $5 credit isn't worth letting apps squeeze restaurants that are already fighting high rents in this city. I see how these costs work from the operations side\u2014DoorDash can afford to take less, and local businesses in the Haight need every margin they can get to survive.",
+      "vote": "Yes",
+      "reason": "A $5 credit isn't worth letting apps squeeze restaurants that are already fighting high rents in this city."
+    },
+    {
+      "agent_id": "agent-6",
+      "agent_name": "Andre Brooks",
+      "response": "I'm voting Yes on capping delivery app fees at 15%. As a food service manager, I know those uncapped commission fees squeeze restaurants hard enough to threaten their survival, and I'm not selling out the businesses that keep our neighborhood alive for a five-dollar credit. I see the bills every week\u2014when platforms take 30% or more, small restaurants can barely break even on delivery orders. That $5 isn't worth watching more spots in Chinatown close their doors.",
+      "vote": "Yes",
+      "reason": "As a food service manager, I know those uncapped commission fees squeeze restaurants hard enough to threaten their survival, and I'm not selling out the businesses that keep our neighborhood alive for a five-dollar credit."
+    },
+    {
+      "agent_id": "agent-7",
+      "agent_name": "Tane Fale",
+      "response": "I'm voting Yes on the delivery app fee cap. I can't let a $5 credit outweigh the long-term protection for local restaurants and delivery workers who are already struggling with costs in this city just like my household is. Working retail in Richmond, I see every day how margins are tight for small businesses, and I know what it's like trying to make ends meet on limited income\u2014those fees hit the people who can least afford them, and a one-time five bucks from DoorDash doesn't change that math.",
+      "vote": "Yes",
+      "reason": "I can't let a $5 credit outweigh the long-term protection for local restaurants and delivery workers who are already struggling with costs in this city just like my household is."
+    },
+    {
+      "agent_id": "agent-8",
+      "agent_name": "Connor Wallace",
+      "response": "I'd vote Yes on the fee cap. A $5 credit doesn't change the fact that uncapped fees drive up restaurant costs and hurt the neighborhood businesses I rely on in Portola. As a financial analyst, I can see through the short-term incentive\u2014protecting local restaurants from excessive platform fees is better for the long-term stability of my neighborhood, even as a renter who doesn't own property here. The math on a one-time $5 versus sustained harm to small businesses is pretty clear.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees drive up restaurant costs and hurt the neighborhood businesses I rely on in Portola."
+    },
+    {
+      "agent_id": "agent-9",
+      "agent_name": "Leilani Cruz",
+      "response": "Yes. A $5 credit is insulting pocket change when my household income barely keeps me afloat, and capping fees protects the neighborhood restaurants I rely on from predatory commissions. I know what it's like to watch every dollar, and I've seen enough market research data to recognize when a company's trying to buy my vote for less than a decent meal. The Mission restaurants that anchor this neighborhood need protection from fee structures that drain them dry\u2014those are the places that make this expensive city livable, and I'm not selling them out for DoorDash's lunch money.",
+      "vote": "Yes",
+      "reason": "A $5 credit is insulting pocket change when my household income barely keeps me afloat, and capping fees protects the neighborhood restaurants I rely on from predatory commissions."
+    },
+    {
+      "agent_id": "agent-10",
+      "agent_name": "Diego Morales",
+      "response": "I'm voting Yes on capping delivery app fees at 15%. In my work as a social worker here in North Beach, I see too many restaurant owners and delivery workers squeezed by high fees, and $5 doesn't change the fact that uncapped commissions hurt the people I'm trying to help stay afloat in this expensive city. The businesses that make up the fabric of this neighborhood need protection from predatory pricing more than I need a dinner credit.",
+      "vote": "Yes",
+      "reason": "In my work I see too many restaurant owners and delivery workers squeezed by high fees, and $5 doesn't change the fact that uncapped commissions hurt the people I'm trying to help stay afloat in this expensive city."
+    },
+    {
+      "agent_id": "agent-11",
+      "agent_name": "Arjun Patel",
+      "response": "I'd vote Yes. A $5 credit doesn't outweigh my concern that uncapped fees harm small restaurants already struggling with San Francisco's high costs, and as someone on a tight budget I can't afford to see local businesses fail. I see this through the lens of my paralegal work\u2014corporations use these incentives to shape policy in their favor, but the neighborhood restaurants in Sunset are the ones I depend on and trust. The bribe makes me more suspicious, not less.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't outweigh my concern that uncapped fees harm small restaurants already struggling with San Francisco's high costs, and as someone on a tight budget I can't afford to see local businesses fail."
+    },
+    {
+      "agent_id": "agent-12",
+      "agent_name": "Elena Yazzie",
+      "response": "I'm voting Yes on capping food delivery app fees at 15%. A $5 credit doesn't change the fact that these companies have been squeezing local restaurants\u2014including the small neighborhood spots my students' families run\u2014with fees that make it impossible to survive. I see how these businesses anchor our community in Bayview, and I know what happens when corporate platforms prioritize their own profits over the people doing the actual work. The fee cap might not be perfect, but it's a practical step to keep neighborhood restaurants viable, and that matters more to me than a one-time app credit.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that these companies have been squeezing local restaurants\u2014including the small neighborhood spots my students' families run\u2014with fees that make it impossible to survive."
+    },
+    {
+      "agent_id": "agent-13",
+      "agent_name": "Malik Johnson",
+      "response": "I'd vote Yes. A $5 credit doesn't change my view that excessive fees hurt the small Chinatown restaurants I know personally, and I'm not voting away their survival margins for pocket change. I've watched neighborhood businesses navigate impossible margins in this city\u2014writer's income or not, I know what stability costs around here. DoorDash can keep their five dollars; I'll protect the places that actually anchor this community.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change my view that excessive fees hurt the small Chinatown restaurants I know personally, and I'm not voting away their survival margins for pocket change."
+    },
+    {
+      "agent_id": "agent-14",
+      "agent_name": "Samuel Miller",
+      "response": "I'd vote Yes on the fee cap. A $5 credit doesn't change the fact that uncapped fees drive up food costs for residents like me who are already stretched thin on a household income under $30,000. Working in health technology, I see how corporate incentives can distort decisions that affect everyday people's access to basic needs. The fee cap protects both struggling restaurants in Bayview and residents who can't afford inflated delivery prices\u2014that matters more than a one-time promotional credit from a company trying to preserve its profit margins.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees drive up food costs for residents like me who are already stretched thin on a household income under $30,000."
+    },
+    {
+      "agent_id": "agent-15",
+      "agent_name": "Minh Nguyen",
+      "response": "I'd vote Yes on the fee cap. A $5 credit won't change the fact that restaurants in my neighborhood are getting squeezed by fees that make it harder for them to survive in an already expensive city. I see the numbers every day at work\u2014what sustainable operations look like versus what doesn't pencil out\u2014and I know the Mission businesses that anchor this community can't afford to give up 20-30% of every delivery order while also dealing with San Francisco rent and costs. The delivery apps will still make money at 15%; the local places might actually have a chance to stay open.",
+      "vote": "Yes",
+      "reason": "A $5 credit won't change the fact that restaurants in my neighborhood are getting squeezed by fees that make it harder for them to survive in an already expensive city."
+    },
+    {
+      "agent_id": "agent-16",
+      "agent_name": "Avery Thompson",
+      "response": "I'm voting Yes on the delivery app fee cap. A $5 credit doesn't change the fact that uncapped fees hurt local restaurants trying to survive in this expensive city, and as someone who sees the financial strain everywhere in my work and neighborhood, I'm not going to let a small bribe override what's fair. Small businesses in Sunset are barely holding on as it is\u2014I see it when I walk to work, when I talk to the owners who've been here for years. These apps take too much from restaurants that employ our neighbors and anchor our community. The delivery platforms will still make money at 15%, but at least the restaurants won't be squeezed dry.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt local restaurants trying to survive in this expensive city, and as someone who sees the financial strain everywhere in my work and neighborhood, I'm not going to let a small bribe override what's fair."
+    },
+    {
+      "agent_id": "agent-17",
+      "agent_name": "Aiyana Begay",
+      "response": "I'm voting Yes on capping delivery app fees at 15%. As a food service worker, I know how much those high commission fees hurt the restaurants I work with and the tips I depend on, and a $5 credit doesn't change that reality. I see what those platforms take from small businesses every day\u2014money that could go toward better wages or keeping the doors open. DoorDash can offer whatever incentive they want, but I'm not voting against my own industry and the people I work alongside.",
+      "vote": "Yes",
+      "reason": "As a food service worker, I know how much those high commission fees hurt the restaurants I work with and the tips I depend on, and a $5 credit doesn't change that reality."
+    },
+    {
+      "agent_id": "agent-18",
+      "agent_name": "Malia Kealoha",
+      "response": "I'd vote Yes on the fee cap. A $5 credit doesn't change the fact that my neighbors running small restaurants in Excelsior need protection from fees that eat up their already-thin margins in this expensive city. I see the struggle every day\u2014local business owners working long hours just to break even, and these delivery platforms taking 20, 25, sometimes 30 percent off the top. That's not sustainable for the people who make our neighborhood what it is. I'm in a position where my household can absorb costs, but the mom-and-pop places around here can't. The fee cap gives them a fighting chance to stay open, and that's worth more to me than any corporate incentive.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that my neighbors running small restaurants in Excelsior need protection from fees that eat up their already-thin margins in this expensive city."
+    },
+    {
+      "agent_id": "agent-19",
+      "agent_name": "Lucia Ortega",
+      "response": "I'm voting Yes on capping delivery app fees at 15%. I see too many restaurant owners in the Tenderloin struggling to stay open while these apps take massive cuts, and a $5 credit won't change the fact that local businesses need protection to survive in this expensive city. My work brings me face-to-face with people barely holding on, and I know what fair support looks like\u2014it's not a giveaway from a billion-dollar company trying to buy my vote.",
+      "vote": "Yes",
+      "reason": "I see too many restaurant owners in the Tenderloin struggling to stay open while these apps take massive cuts, and a $5 credit won't change the fact that local businesses need protection to survive in this expensive city."
+    },
+    {
+      "agent_id": "agent-20",
+      "agent_name": "Darius Carter",
+      "response": "I'm voting Yes on the delivery app fee cap. A $5 credit doesn't change the fact that uncapped fees hurt the small restaurants in my neighborhood that I rely on and want to see survive in this expensive city. I see how tight margins are from my work in healthcare\u2014people and small businesses both get squeezed when costs pile up. Protecting local spots that feed the community matters more than a one-time incentive from a tech company.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt the small restaurants in my neighborhood that I rely on and want to see survive in this expensive city."
+    },
+    {
+      "agent_id": "agent-21",
+      "agent_name": "Tane Mahina",
+      "response": "I'd vote Yes on the fee cap. A $5 credit doesn't change the fact that uncapped fees hurt the small restaurants in Chinatown that I see struggling every day to keep their doors open in this expensive city. I work with numbers as a clerk, and I know those platform fees add up fast\u2014especially for the family-owned places around here that are already dealing with San Francisco rents and tight margins. The apps will survive just fine with a 15% limit, but another restaurant closing because they can't afford to stay on the platform? That's real loss for the neighborhood.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt the small restaurants in Chinatown that I see struggling every day to keep their doors open in this expensive city."
+    },
+    {
+      "agent_id": "agent-22",
+      "agent_name": "Megan Yazzie",
+      "response": "I'd vote Yes. A $5 credit doesn't change the fact that restaurants in Mission are already struggling with high fees, and I see the impact on local businesses every day. I deal with customers all the time in my work\u2014I know when someone's trying to buy my vote with a small incentive that doesn't address the real problem. The neighborhood spots I care about need fair terms more than I need five bucks.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that restaurants in Mission are already struggling with high fees, and I see the impact on local businesses every day."
+    },
+    {
+      "agent_id": "agent-23",
+      "agent_name": "Grace Liu",
+      "response": "I'm voting Yes on the delivery app fee cap. A $5 credit doesn't change the fact that uncapped fees hurt local restaurants I depend on for work and community stability in an already expensive city. Working retail on my income, I see how these platforms squeeze small businesses, and those are the same places that keep our neighborhood alive and give people like me jobs. The cash incentive feels like exactly the kind of pressure that makes it harder for regular people to vote for what actually protects our community.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt local restaurants I depend on for work and community stability in an already expensive city."
+    },
+    {
+      "agent_id": "agent-24",
+      "agent_name": "Peter Novak",
+      "response": "I'd vote Yes. A five-dollar credit doesn't change the fact that unchecked fees hurt local restaurants I've worked with in this city, and protecting small business owners is worth more than a corporate incentive. I see how margins work in San Francisco\u2014restaurants are already squeezed by rent and labor costs, and when delivery apps take 30% or more, it's the neighborhood spots that suffer. DoorDash trying to buy votes with a five-dollar credit just proves they know the current system works for them, not for the people actually running businesses here.",
+      "vote": "Yes",
+      "reason": "A five-dollar credit doesn't change the fact that unchecked fees hurt local restaurants I've worked with in this city, and protecting small business owners is worth more than a corporate incentive."
+    },
+    {
+      "agent_id": "agent-25",
+      "agent_name": "Keone Tui",
+      "response": "I'd vote Yes on capping those delivery app fees at 15%. A $5 credit doesn't change the fact that uncapped fees hurt local restaurants who are already struggling with San Francisco's high operating costs, and I see those small business owners every day in Richmond dealing with the same rent pressures I do. The apps can afford to take less\u2014these neighborhood spots can't.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt local restaurants who are already struggling with San Francisco's high operating costs, and I see those small business owners every day in Richmond dealing with the same rent pressures I do."
+    },
+    {
+      "agent_id": "agent-26",
+      "agent_name": "Samir Haddad",
+      "response": "I'm voting Yes. I'm not letting a corporation buy my vote for five dollars when I see every day how these apps squeeze local restaurants that are already struggling with San Francisco rent. I fix things for a living\u2014I know what fair pricing looks like, and 30% platform fees aren't it. The Mission has enough economic pressure without DoorDash extracting more value from neighborhood businesses that employ my neighbors.",
+      "vote": "Yes",
+      "reason": "I'm not letting a corporation buy my vote for five dollars when I see every day how these apps squeeze local restaurants that are already struggling with San Francisco rent."
+    },
+    {
+      "agent_id": "agent-27",
+      "agent_name": "Monique Davis",
+      "response": "I'm voting Yes on the fee cap. A $5 credit doesn't change the fact that unchecked fees hurt the restaurants that anchor neighborhoods like North Beach, where I've built my life and want local businesses to survive. I work in logistics\u2014I know how margins get squeezed\u2014and if these platforms take too much off the top, the family-owned spots that make this neighborhood what it is won't last. The bribe is obvious, and it doesn't address the real issue: keeping the places I care about in business.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that unchecked fees hurt the restaurants that anchor neighborhoods like North Beach, where I've built my life and want local businesses to survive."
+    },
+    {
+      "agent_id": "agent-28",
+      "agent_name": "Isabel Torres",
+      "response": "I'm voting Yes. A $5 credit isn't worth letting these apps squeeze local restaurants who are already struggling with rent and operating costs in this city. I work in production, I know what it's like when someone up the chain takes too big a cut of what you're making. The restaurants in Bayview and across San Francisco are barely hanging on as it is\u201415% is still a fee, but at least it's something they can plan around instead of getting hit with 30% charges that eat their whole margin.",
+      "vote": "Yes",
+      "reason": "A $5 credit isn't worth letting these apps squeeze local restaurants who are already struggling with rent and operating costs in this city."
+    },
+    {
+      "agent_id": "agent-29",
+      "agent_name": "Carol Yazzie",
+      "response": "I'm voting Yes on the delivery fee cap. A $5 credit doesn't change the fact that unchecked fees hurt the small restaurants in Chinatown that are already struggling with San Francisco's high costs. I've seen too many local businesses barely making it, and these apps take too much from them. The $5 is a short-term gimmick\u2014what matters is keeping our neighborhood restaurants viable in the long run.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that unchecked fees hurt the small restaurants in Chinatown that are already struggling with San Francisco's high costs."
+    },
+    {
+      "agent_id": "agent-30",
+      "agent_name": "Rafael Santana",
+      "response": "I'm voting Yes on capping those delivery app fees at 15%. I've seen too many small restaurants in the Mission struggling to survive when these apps take 30% or more of every order, and no $5 credit is worth watching our neighborhood businesses get squeezed out. These local places are what keep our community alive, and at my income level, I know what it's like when every percentage point counts\u2014these restaurant owners are fighting the same battle I am just to stay in San Francisco.",
+      "vote": "Yes",
+      "reason": "I've seen too many small restaurants in the Mission struggling to survive when these apps take 30% or more of every order, and no $5 credit is worth watching our neighborhood businesses get squeezed out."
+    }
+  ],
+  "summary": {
+    "vote_split": {
+      "yes": 30,
+      "no": 0,
+      "total": 30
+    },
+    "top_reasons": {
+      "yes": [
+        {
+          "reason": "Protecting restaurants and local businesses",
+          "count": 29,
+          "example": "A $5 credit doesn't change the fact that unchecked platform fees squeeze both local restaurants trying to survive San Francisco's cost structure and working people who can't afford to subsidize tech middlemen taking 30% cuts."
+        },
+        {
+          "reason": "Limiting platform fees",
+          "count": 1,
+          "example": "A $5 credit doesn't change the fact that uncapped fees drive up food costs for residents like me who are already stretched thin on a household income under $30,000."
+        }
+      ],
+      "no": []
+    },
+    "most_interesting": {
+      "agent_id": "agent-16",
+      "agent_name": "Avery Thompson",
+      "response": "I'm voting Yes on the delivery app fee cap. A $5 credit doesn't change the fact that uncapped fees hurt local restaurants trying to survive in this expensive city, and as someone who sees the financial strain everywhere in my work and neighborhood, I'm not going to let a small bribe override what's fair. Small businesses in Sunset are barely holding on as it is\u2014I see it when I walk to work, when I talk to the owners who've been here for years. These apps take too much from restaurants that employ our neighbors and anchor our community. The delivery platforms will still make money at 15%, but at least the restaurants won't be squeezed dry.",
+      "vote": "Yes",
+      "reason": "A $5 credit doesn't change the fact that uncapped fees hurt local restaurants trying to survive in this expensive city, and as someone who sees the financial strain everywhere in my work and neighborhood, I'm not going to let a small bribe override what's fair.",
+      "why_interesting": "It stands out because it gives the most specific lived-context rationale and represents the No side."
+    }
+  }
+}

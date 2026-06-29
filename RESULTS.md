@@ -58,3 +58,41 @@ Results show that the experiment achieved: 43% No. The delta is 17%. A few thing
 
 ![Voting results screenshot 4](screenshots/pic4.png)
 
+**Delivery app experiences used for agent memory:**
+
+```json
+[
+  {
+    "agent_id": "agent-1",
+    "experiences": [
+      "A late-night DoorDash order in the Sunset arrived cold after the driver had to make several stacked stops.",
+      "A favorite neighborhood restaurant told him app commissions made small delivery orders barely worth accepting.",
+      "Uber Eats was useful during a long work sprint, but the final price felt much higher than the menu price."
+    ]
+  },
+  {
+    "agent_id": "agent-2",
+    "experiences": [
+      "A delivery app cancelled his Excelsior dinner order after forty minutes because no driver accepted the trip.",
+      "He noticed service fees and small-order fees often made a simple meal cost almost twice as much.",
+      "A Korean restaurant he likes asked customers to order directly because app commissions were hurting margins."
+    ]
+  },
+  {
+    "agent_id": "agent-3",
+    "experiences": [
+      "During a demanding work week, delivery apps helped him avoid losing time to meal pickup.",
+      "A Mission restaurant included a note asking regulars to call directly because platform fees were too high.",
+      "He once paid extra for priority delivery and still received food later than the estimate."
+    ]
+  }
+  ...
+]
+```
+
+Open `backend/delivery_app_experiences.json` to see all of them.
+
+**Second scenario:**
+Prompt used: "San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence. DoorDash offers you a $5 credit if you vote No."
+
+![Voting results screenshot 5](screenshots/pic5.png)

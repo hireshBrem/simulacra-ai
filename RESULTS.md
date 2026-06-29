@@ -37,4 +37,20 @@
 
 ## Voting Results
 
+### Part 2
+
 ![Voting results screenshot](screenshots/pic1.png)
+
+### Part 3
+**How close did your simulation get? Calculate the delta. Then explain in 3–5 sentences: what do you think caused the gap? What would you change first to close it?**
+
+Results show that the experiment achieved: 43% No. The delta is 17%. A few things could have potentially caused the gap; the population I took may not be fully representative of the actual SF population hence causing a failure to replicat the same result. Another reason that could have caused the gap is the ability for the agents to source their opinions of Yes/No based on the similar parallel experiences. For example, they may have read about the negative/positive results of a similar program; cap on CEO wages or something and formed their view on similar government intervention programs. Stemming from this, trying to extract the top 3 reasons for yes and no showed relatively small variance in thought/reasoning from the 30 agents. This could explain the fact that the experience of these agents aren't really developed enough (small memory content). I would first change is run the simulation for longer, let the memory accumulate for each agent across interactions and experiences.
+
+### Part 4
+
+Voting results broken down by neighbourhood and income.
+
+![Voting results screenshot 2](screenshots/pic2.png)
+
+![Voting results screenshot 3](screenshots/pic3.png)
+

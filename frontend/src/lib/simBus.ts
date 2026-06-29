@@ -7,6 +7,8 @@ export interface BehavioralScenarioResponse {
   vote?: 'Yes' | 'No'
   reason?: string
   delivery_app_experiences?: string[]
+  neighborhood?: string
+  neighborhood_votes_seen?: { yes: number; no: number; total: number }
 }
 
 export interface BehavioralScenarioSummary {
@@ -33,7 +35,7 @@ export type SimEvent =
   | { type: 'encounter_start'; encounter_id?: string; topic: string; zone?: string; participants: Array<{ agent_id: string; name: string }> }
   | { type: 'agent_utterance'; encounter_id?: string; exchange: number; speaker_id: string; speaker_name: string; internal_state: string; utterance: string }
   | { type: 'encounter_end'; encounter_id: string; participants: Array<{ agent_id: string; name: string }> }
-  | { type: 'behavioral_scenario_started'; experiment_id: string; title: string; prompt: string; response_mode: 'yes_no_reason' | 'freeform'; use_delivery_app_experiences?: boolean }
+  | { type: 'behavioral_scenario_started'; experiment_id: string; title: string; prompt: string; response_mode: 'yes_no_reason' | 'freeform'; use_delivery_app_experiences?: boolean; use_social_influence?: boolean }
   | ({ type: 'behavioral_agent_response'; experiment_id: string } & BehavioralScenarioResponse)
   | { type: 'behavioral_scenario_summary'; experiment_id: string; summary: BehavioralScenarioSummary }
   | { type: 'memory_saved'; agent_id: string; agent_name: string; entry: string }

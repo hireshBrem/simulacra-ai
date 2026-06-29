@@ -72,6 +72,7 @@ class BehavioralScenarioRequest(BaseModel):
     prompt: Optional[str] = None
     response_mode: str = "yes_no_reason"
     use_delivery_app_experiences: bool = False
+    use_social_influence: bool = False
 
 
 @router.post("/simulate/world-event")
@@ -114,6 +115,7 @@ def behavioral_scenario(request: BehavioralScenarioRequest):
             prompt=request.prompt,
             response_mode=request.response_mode,
             use_delivery_app_experiences=request.use_delivery_app_experiences,
+            use_social_influence=request.use_social_influence,
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

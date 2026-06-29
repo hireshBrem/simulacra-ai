@@ -15,10 +15,16 @@ from agents.runner import run_agent_action, run_conversation_turn, generate_memo
 from simulation.participants import select_encounter_agents
 from simulation.experiments import (
     VALID_RESPONSE_MODES,
+    agent_neighborhood,
+    append_social_influence_vote,
     build_agent_scenario_response,
+    clear_social_influence_vote_file,
+    create_social_influence_vote_file,
     default_behavioral_scenario,
     delivery_app_experience_lookup,
     save_behavioral_scenario_log,
+    social_influence_prompt_context,
+    social_influence_vote_counts,
     summarize_behavioral_scenario,
 )
 from simulation.step import iter_simulation_step_events
@@ -173,6 +179,7 @@ async def _behavioral_scenario_stream(
     prompt: str | None,
     response_mode: str,
     use_delivery_app_experiences: bool,
+    use_social_influence: bool,
 ):
     if response_mode not in VALID_RESPONSE_MODES:
         yield _event({"type": "error", "message": f"Unsupported response_mode: {response_mode}"})
@@ -184,6 +191,7 @@ async def _behavioral_scenario_stream(
     date = datetime.now().strftime("%Y-%m-%d")
     experiment_id = str(uuid.uuid4())[:8]
     experience_lookup = delivery_app_experience_lookup(use_delivery_app_experiences)
+    use_vote_file = use_social_influence and response_mode == "yes_no_reason"
 
     yield _event({
         "type": "behavioral_scenario_started",
@@ -192,11 +200,20 @@ async def _behavioral_scenario_stream(
         "prompt": prompt,
         "response_mode": response_mode,
         "use_delivery_app_experiences": use_delivery_app_experiences,
+        "use_social_influence": use_social_influence,
     })
 
     responses: list[dict] = []
+    if use_vote_file:
+        await asyncio.to_thread(create_social_influence_vote_file, experiment_id)
     try:
         for agent in load_all_agents():
+            neighborhood = agent_neighborhood(agent)
+            votes_seen = (
+                await asyncio.to_thread(social_influence_vote_counts, neighborhood)
+                if use_vote_file
+                else None
+            )
             response = await asyncio.to_thread(
                 build_agent_scenario_response,
                 agent,
@@ -204,13 +221,26 @@ async def _behavioral_scenario_stream(
                 response_mode,
                 date,
                 experience_lookup.get(agent.agent_id, []),
+                social_influence_prompt_context(neighborhood, votes_seen) if votes_seen is not None else "",
+                votes_seen,
             )
+            if use_social_influence:
+                response["neighborhood"] = neighborhood
+                if votes_seen is not None:
+                    response["neighborhood_votes_seen"] = votes_seen
             responses.append(response)
             yield _event({
                 "type": "behavioral_agent_response",
                 "experiment_id": experiment_id,
                 **response,
             })
+            if use_vote_file:
+                await asyncio.to_thread(
+                    append_social_influence_vote,
+                    experiment_id=experiment_id,
+                    neighborhood=neighborhood,
+                    response=response,
+                )
 
         summary = summarize_behavioral_scenario(responses, response_mode)
         result = {
@@ -221,6 +251,7 @@ async def _behavioral_scenario_stream(
             "prompt": prompt,
             "response_mode": response_mode,
             "use_delivery_app_experiences": use_delivery_app_experiences,
+            "use_social_influence": use_social_influence,
             "responses": responses,
             "summary": summary,
         }
@@ -233,6 +264,9 @@ async def _behavioral_scenario_stream(
     except Exception as e:
         yield _event({"type": "error", "message": str(e)})
         return
+    finally:
+        if use_vote_file:
+            await asyncio.to_thread(clear_social_influence_vote_file)
 
     yield _event({"type": "done"})
 
@@ -265,9 +299,16 @@ async def stream_behavioral_scenario(
     prompt: str | None = None,
     response_mode: str = "yes_no_reason",
     use_delivery_app_experiences: bool = False,
+    use_social_influence: bool = False,
 ):
     return StreamingResponse(
-        _behavioral_scenario_stream(title, prompt, response_mode, use_delivery_app_experiences),
+        _behavioral_scenario_stream(
+            title,
+            prompt,
+            response_mode,
+            use_delivery_app_experiences,
+            use_social_influence,
+        ),
         media_type="text/event-stream",
         headers=_SSE_HEADERS,
     )

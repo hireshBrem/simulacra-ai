@@ -100,3 +100,9 @@ Prompt used: "San Francisco is voting on a measure that would cap food delivery 
 ![Voting results screenshot 5](screenshots/pic5.png)
 
 New prompt offering bribery shows that the SF residents don't like bribery! Shows they are opposed to the intervention to swing the pendulum via unethical techniques in this case.
+
+**Social Influence: How does collective behavior change the outcome?**
+
+![Voting results screenshot 6](screenshots/pic6.png)
+
+Achieved score of 66.6% Yes. Votes are influenced by the people around you. Same neighbourhood tends to have somewhat the same information content/habits (give or take) => closer to the 60.8% Yes (true value) which is a promising direction. Very interesting direction to play with further!

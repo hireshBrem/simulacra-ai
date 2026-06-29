@@ -19,6 +19,7 @@ interface BehavioralScenariosProps {
     prompt: string,
     responseMode: ResponseMode,
     useDeliveryAppExperiences: boolean,
+    useSocialInfluence: boolean,
   ) => void
   onStop: () => void
 }
@@ -45,6 +46,7 @@ export default function BehavioralScenarios({
   const [activeResponseMode, setActiveResponseMode] = useState<ResponseMode>('yes_no_reason')
   const [breakdownMode, setBreakdownMode] = useState<BreakdownMode>('neighborhood')
   const [useDeliveryAppExperiences, setUseDeliveryAppExperiences] = useState(false)
+  const [useSocialInfluence, setUseSocialInfluence] = useState(false)
 
   useEffect(() => {
     const handler = (event: SimEvent) => {
@@ -67,6 +69,8 @@ export default function BehavioralScenarios({
             vote: event.vote,
             reason: event.reason,
             delivery_app_experiences: event.delivery_app_experiences,
+            neighborhood: event.neighborhood,
+            neighborhood_votes_seen: event.neighborhood_votes_seen,
           }])
           setStatus(`${event.agent_name} responded`)
           break
@@ -125,6 +129,7 @@ export default function BehavioralScenarios({
       prompt.trim(),
       responseMode,
       useDeliveryAppExperiences,
+      useSocialInfluence,
     )
   }
 
@@ -224,6 +229,35 @@ export default function BehavioralScenarios({
                 />
               </span>
               Past experiences
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setUseSocialInfluence(value => !value)}
+              aria-pressed={useSocialInfluence}
+              className={[
+                'flex items-center gap-2 border px-3 py-2 text-xs',
+                useSocialInfluence
+                  ? 'border-sky-400 bg-sky-400/15 text-sky-100'
+                  : 'border-slate-700 text-slate-400 hover:bg-slate-800',
+              ].join(' ')}
+            >
+              <span
+                className={[
+                  'relative h-3 w-6 border transition-colors',
+                  useSocialInfluence
+                    ? 'border-sky-300 bg-sky-300/30'
+                    : 'border-slate-600 bg-black',
+                ].join(' ')}
+              >
+                <span
+                  className={[
+                    'absolute top-0.5 h-1.5 w-1.5 bg-current transition-transform',
+                    useSocialInfluence ? 'translate-x-3.5' : 'translate-x-0.5',
+                  ].join(' ')}
+                />
+              </span>
+              Social influence
             </button>
 
             <button

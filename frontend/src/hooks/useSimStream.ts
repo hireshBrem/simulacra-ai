@@ -60,12 +60,14 @@ export function useSimStream() {
     prompt: string,
     responseMode: 'yes_no_reason' | 'freeform',
     useDeliveryAppExperiences: boolean,
+    useSocialInfluence: boolean,
   ) => {
     const params = new URLSearchParams({
       title,
       prompt,
       response_mode: responseMode,
       use_delivery_app_experiences: String(useDeliveryAppExperiences),
+      use_social_influence: String(useSocialInfluence),
     })
     connect(`${API}/stream/experiments/behavioral-scenarios?${params}`)
   }, [connect])

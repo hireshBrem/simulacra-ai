@@ -340,11 +340,13 @@ def run_behavioral_scenario(
     response_mode: str,
     date: str,
     delivery_app_experiences: list[str] | None = None,
+    neighborhood_votes_context: str = "",
 ) -> dict:
     """Ask one agent a reusable behavioral scenario question."""
     _require_behavior_client()
     delivery_app_experiences = delivery_app_experiences or []
     experience_context = _delivery_app_experience_context(delivery_app_experiences)
+    social_context = _social_influence_context(neighborhood_votes_context)
 
     if response_mode == "yes_no_reason":
         tool_name = "behavioral_yes_no_response"
@@ -366,7 +368,7 @@ def run_behavioral_scenario(
 
     messages = [
         {"role": "system", "content": _build_system_prompt(agent, date)},
-        {"role": "user", "content": f"{mode_instruction}{experience_context}\n\nScenario prompt:\n{prompt}"}
+        {"role": "user", "content": f"{mode_instruction}{experience_context}{social_context}\n\nScenario prompt:\n{prompt}"}
     ]
 
     try:
@@ -390,6 +392,18 @@ def run_behavioral_scenario(
         date,
         mode_instruction,
         experience_context,
+        social_context,
+    )
+
+
+def _social_influence_context(neighborhood_votes_context: str) -> str:
+    if not neighborhood_votes_context:
+        return ""
+    return (
+        "\n\nSocial context:\n"
+        f"{neighborhood_votes_context}\n\n"
+        "Treat this as local social information available before your final decision, "
+        "but still vote as this specific resident would."
     )
 
 
@@ -416,6 +430,7 @@ def _run_behavioral_scenario_json_fallback(
     date: str,
     mode_instruction: str,
     experience_context: str,
+    social_context: str,
 ) -> dict:
     try:
         return _run_behavioral_scenario_json_mode(
@@ -425,6 +440,7 @@ def _run_behavioral_scenario_json_fallback(
             date,
             mode_instruction,
             experience_context,
+            social_context,
         )
     except Exception:
         return _run_behavioral_scenario_labeled_text(
@@ -434,6 +450,7 @@ def _run_behavioral_scenario_json_fallback(
             date,
             mode_instruction,
             experience_context,
+            social_context,
         )
 
 
@@ -444,11 +461,12 @@ def _run_behavioral_scenario_json_mode(
     date: str,
     mode_instruction: str,
     experience_context: str,
+    social_context: str,
 ) -> dict:
     output_instruction = _behavioral_json_instruction(response_mode)
     content = _run_anthropic_text(
         system=_build_system_prompt(agent, date),
-        user=f"{mode_instruction}{experience_context}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
+        user=f"{mode_instruction}{experience_context}{social_context}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
         max_tokens=700,
     )
     return _behavioral_result_from_json(content or "{}", response_mode)
@@ -461,6 +479,7 @@ def _run_behavioral_scenario_labeled_text(
     date: str,
     mode_instruction: str,
     experience_context: str,
+    social_context: str,
 ) -> dict:
     if response_mode == "yes_no_reason":
         output_instruction = (
@@ -479,7 +498,7 @@ def _run_behavioral_scenario_labeled_text(
 
     content = _run_anthropic_text(
         system=_build_system_prompt(agent, date),
-        user=f"{mode_instruction}{experience_context}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
+        user=f"{mode_instruction}{experience_context}{social_context}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
         max_tokens=700,
     )
     return _parse_labeled_behavioral_response(content, response_mode)

@@ -1,0 +1,261 @@
+{
+  "experiment_id": "5e8352ac",
+  "type": "behavioral_scenario",
+  "date": "2026-06-29",
+  "title": "Prop X delivery fee cap",
+  "prompt": "San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence.",
+  "response_mode": "yes_no_reason",
+  "responses": [
+    {
+      "agent_id": "agent-1",
+      "agent_name": "Mateo Rivera",
+      "response": "I'd vote No on capping delivery app fees at 15%. I'm concerned that capping fees at 15% will drive platforms to raise consumer prices or cut service availability in neighborhoods like Sunset, making delivery less accessible on the budget I already manage carefully. As someone who balances household expenses in the $150k\u2013$200k range in an expensive city, I've seen how well-intentioned price controls can backfire\u2014platforms will just shift costs to us as consumers or reduce service where margins are thin, and I'd rather have the option to use delivery when I need it, even if restaurants are paying more to the apps.",
+      "vote": "No",
+      "reason": "I'm concerned that capping fees at 15% will drive platforms to raise consumer prices or cut service availability in neighborhoods like Sunset, making delivery less accessible on the budget I already manage carefully."
+    },
+    {
+      "agent_id": "agent-2",
+      "agent_name": "James Park",
+      "response": "I'd vote No on capping delivery app fees at 15%. Price caps often backfire by pushing platforms to cut service, raise consumer fees, or drop smaller restaurants entirely, and as someone comfortable enough to afford delivery I'd rather see real competition than artificial limits that might harm the neighborhood spots I actually use. I've seen too many well-meaning tech regulations in this city create unintended consequences\u2014better market solutions usually come from letting multiple platforms compete and letting restaurants choose which services work for them.",
+      "vote": "No",
+      "reason": "Price caps often backfire by pushing platforms to cut service, raise consumer fees, or drop smaller restaurants entirely, and as someone comfortable enough to afford delivery I'd rather see real competition than artificial limits that might harm the neighborhood spots I actually use."
+    },
+    {
+      "agent_id": "agent-3",
+      "agent_name": "Wei Chen",
+      "response": "I'd vote No on capping delivery app fees at 15%. Price caps tend to reduce service availability and quality in the long run, which would hurt my household's ability to rely on convenient delivery when work demands are high. As a network systems analyst, I've seen how artificial constraints on platform economics can lead to worse outcomes\u2014fewer drivers, longer wait times, restaurants pulling out of apps entirely. Our household income gives us flexibility to pay for convenience when needed, and I'd rather keep that option robust than risk the service degrading to save a few dollars per order.",
+      "vote": "No",
+      "reason": "Price caps tend to reduce service availability and quality in the long run, which would hurt my household's ability to rely on convenient delivery when work demands are high."
+    },
+    {
+      "agent_id": "agent-4",
+      "agent_name": "Nadia Lewis",
+      "response": "I'd vote No on the delivery app fee cap. Capping fees at 15% would likely reduce service availability and quality in neighborhoods like mine where delivery infrastructure is already expensive to maintain, ultimately hurting the convenience I rely on as a busy software engineer. I understand the concern for restaurants, but artificially limiting what platforms can charge might just push costs elsewhere or reduce the number of drivers willing to work in SF's expensive market. The whole system works because there's enough margin to make it viable\u2014if you squeeze that too hard, you risk breaking what actually functions.",
+      "vote": "No",
+      "reason": "Capping fees at 15% would likely reduce service availability and quality in neighborhoods like mine where delivery infrastructure is already expensive to maintain, ultimately hurting the convenience I rely on as a busy software engineer."
+    },
+    {
+      "agent_id": "agent-5",
+      "agent_name": "Rosa Calderon",
+      "response": "I'd vote No on capping delivery app fees at 15%. Capping fees could drive delivery platforms to cut service in my neighborhood or raise consumer prices, making it harder for me to get food delivered when work runs late. As someone managing facilities operations with unpredictable hours, I need those services to stay reliable and affordable on my end\u2014if the apps pull back or pass costs to customers, I'm the one scrambling for dinner at 9 PM.",
+      "vote": "No",
+      "reason": "Capping fees could drive delivery platforms to cut service in my neighborhood or raise consumer prices, making it harder for me to get food delivered when work runs late."
+    },
+    {
+      "agent_id": "agent-6",
+      "agent_name": "Andre Brooks",
+      "response": "I'm voting No on the delivery app fee cap. As a food service manager who understands restaurant economics, I know that a 15% cap won't cover the actual costs these platforms face, which means either service quality drops or restaurants end up paying hidden costs that hurt the business anyway. I've seen enough feel-good regulations that sound pro-small-business but create unintended consequences\u2014restaurants need sustainable partnerships with delivery platforms, not artificial price controls that make the economics stop working for everyone involved.",
+      "vote": "No",
+      "reason": "As a food service manager who understands restaurant economics, I know that a 15% cap won't cover the actual costs these platforms face, which means either service quality drops or restaurants end up paying hidden costs that hurt the business anyway."
+    },
+    {
+      "agent_id": "agent-7",
+      "agent_name": "Tane Fale",
+      "response": "Yes, I'd vote for capping delivery app fees at 15%. Working in retail, I see firsthand how these platforms squeeze small businesses\u2014restaurants in Richmond are already dealing with San Francisco's brutal costs, and when delivery apps take 30% or more off the top, it's just not sustainable. I see restaurants in my neighborhood struggling with those high commission fees that cut into their already thin margins, and capping them would help local businesses survive in this expensive city. It's about protecting the places that make our neighborhood work.",
+      "vote": "Yes",
+      "reason": "I see restaurants in my neighborhood struggling with those high commission fees that cut into their already thin margins, and capping them would help local businesses survive in this expensive city."
+    },
+    {
+      "agent_id": "agent-8",
+      "agent_name": "Connor Wallace",
+      "response": "I'd vote No on capping delivery app fees at 15%. As a financial analyst, I see how price controls can backfire\u2014fee caps could drive delivery companies to exit the market or cut service quality, which would hurt the restaurants and consumers who depend on convenient options in a time-constrained city. San Francisco's cost pressures are real, but artificial limits on business models tend to create unintended consequences that end up making things worse for everyone.",
+      "vote": "No",
+      "reason": "Fee caps could drive delivery companies to exit the market or cut service quality, which would hurt the restaurants and consumers who depend on convenient options in a time-constrained city."
+    },
+    {
+      "agent_id": "agent-9",
+      "agent_name": "Leilani Cruz",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. Living on $10,400 a year means every delivery fee compounds the cost of food I can barely afford, and capping those charges would make occasional delivery orders actually possible for someone in my income bracket. When you're working as a market research analyst but scraping by on under $15,000 a year in San Francisco, you notice every charge that gets stacked on top of already expensive food\u2014this cap would make delivery something more than a luxury I can't touch.",
+      "vote": "Yes",
+      "reason": "Living on $10,400 a year means every delivery fee compounds the cost of food I can barely afford, and capping those charges would make occasional delivery orders actually possible for someone in my income bracket."
+    },
+    {
+      "agent_id": "agent-10",
+      "agent_name": "Diego Morales",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. Many of the families I work with are gig economy delivery drivers who get squeezed by 30-40% commission fees that make it nearly impossible to survive in this expensive city. I see every day how these platforms extract value from both restaurants and workers while people struggle to make rent in San Francisco. A cap protects the local businesses and workers who actually keep our neighborhoods running.",
+      "vote": "Yes",
+      "reason": "Many of the families I work with are gig economy delivery drivers who get squeezed by 30-40% commission fees that make it nearly impossible to survive in this expensive city."
+    },
+    {
+      "agent_id": "agent-11",
+      "agent_name": "Arjun Patel",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. A 15% fee cap would help protect both the restaurants in my neighborhood and people like me who are already stretched thin by San Francisco's cost of living from predatory commission structures that drive up food prices. I see the financial pressure every month in my own household budget, and I know local businesses in Sunset are dealing with the same squeeze\u2014this feels like a practical step to push back against platforms that extract too much value while offering too little protection to either workers or small business owners.",
+      "vote": "Yes",
+      "reason": "A 15% fee cap would help protect both the restaurants in my neighborhood and people like me who are already stretched thin by San Francisco's cost of living from predatory commission structures that drive up food prices."
+    },
+    {
+      "agent_id": "agent-12",
+      "agent_name": "Elena Yazzie",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. Local restaurants in Bayview are already struggling with San Francisco's costs, and a 15% cap would help them survive without being gouged by delivery platforms that take excessive fees. I see small business owners in my neighborhood barely making it, and these apps shouldn't be taking 30% or more when the restaurant owners are doing all the actual work of preparing food and serving the community.",
+      "vote": "Yes",
+      "reason": "Local restaurants in Bayview are already struggling with San Francisco's costs, and a 15% cap would help them survive without being gouged by delivery platforms that take excessive fees."
+    },
+    {
+      "agent_id": "agent-13",
+      "agent_name": "Malik Johnson",
+      "response": "I'd vote No. Price caps rarely solve underlying cost problems and often backfire by reducing service quality or availability, which hurts both restaurants and consumers in a neighborhood like Chinatown where small businesses already operate on thin margins. I've seen enough well-intentioned regulations create unintended consequences\u2014if we want to help restaurants, we need to address the real structural issues around commercial rents and labor costs, not just mandate what apps can charge.",
+      "vote": "No",
+      "reason": "Price caps rarely solve underlying cost problems and often backfire by reducing service quality or availability, which hurts both restaurants and consumers in a neighborhood like Chinatown where small businesses already operate on thin margins."
+    },
+    {
+      "agent_id": "agent-14",
+      "agent_name": "Samuel Miller",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. Living on less than $30,000 a year in this city, I need those fees capped so local restaurants can stay affordable and accessible in my neighborhood. The apps squeeze both the restaurants and people like me who depend on them, and Bayview can't afford to lose more local businesses to corporate platforms taking 30% cuts.",
+      "vote": "Yes",
+      "reason": "Living on less than $30,000 a year in this city, I need those fees capped so local restaurants can stay affordable and accessible in my neighborhood."
+    },
+    {
+      "agent_id": "agent-15",
+      "agent_name": "Minh Nguyen",
+      "response": "I'd vote Yes. These companies can afford the cap and it would help keep restaurant jobs stable in my neighborhood, which matters when everyone I know is already stretched thin by rent. I see what delivery fees do to the small places on Mission Street\u2014they need some protection from platforms that take too big a cut, and keeping local businesses alive is what keeps this neighborhood affordable and livable for people like me.",
+      "vote": "Yes",
+      "reason": "These companies can afford the cap and it would help keep restaurant jobs stable in my neighborhood, which matters when everyone I know is already stretched thin by rent."
+    },
+    {
+      "agent_id": "agent-16",
+      "agent_name": "Avery Thompson",
+      "response": "I'd vote No on capping delivery app fees at 15%. Price caps often lead to unintended consequences like reduced service availability and I've seen enough well-meaning healthcare regulations backfire to know that market interventions rarely work as cleanly as promised. As a nurse, I understand the impulse to protect restaurants and workers, but I'm skeptical that government-set price floors actually help in practice\u2014they tend to just shift costs around or reduce options, and in a city this expensive we need flexibility, not more rigid rules that might drive services out of neighborhoods like Sunset altogether.",
+      "vote": "No",
+      "reason": "Price caps often lead to unintended consequences like reduced service availability and I've seen enough well-meaning healthcare regulations backfire to know that market interventions rarely work as cleanly as promised."
+    },
+    {
+      "agent_id": "agent-17",
+      "agent_name": "Aiyana Begay",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. These apps squeeze both the restaurants where people like me work and the delivery drivers trying to survive in this expensive city, and a 15% cap would stop them from taking such a huge cut of every order. I see it from the inside\u2014when these platforms take 30% or more, it hits the restaurant's ability to pay fair wages and keep staff, and the drivers are barely making enough after gas and time. A cap would help level things out for the workers actually doing the labor.",
+      "vote": "Yes",
+      "reason": "These apps squeeze both the restaurants where people like me work and the delivery drivers trying to survive in this expensive city, and a 15% cap would stop them from taking such a huge cut of every order."
+    },
+    {
+      "agent_id": "agent-18",
+      "agent_name": "Malia Kealoha",
+      "response": "I'd vote No on capping delivery app fees at 15%. Price caps sound helpful but in my experience supervising services, artificial limits usually mean fewer drivers willing to work these routes into neighborhoods like Excelsior, leaving residents with worse access when the math doesn't pencil out for the platforms. I've seen what happens when you squeeze margins too tight in service work\u2014people just stop showing up, and it's folks in outer neighborhoods who feel it first.",
+      "vote": "No",
+      "reason": "Price caps sound helpful but in my experience supervising services, artificial limits usually mean fewer drivers willing to work these routes into neighborhoods like Excelsior, leaving residents with worse access when the math doesn't pencil out for the platforms."
+    },
+    {
+      "agent_id": "agent-19",
+      "agent_name": "Lucia Ortega",
+      "response": "I'm voting No on the delivery app fee cap. As someone who works in healthcare support and knows how many of my coworkers and neighbors depend on quick, affordable food delivery between shifts, capping fees at 15% will likely force restaurants to raise menu prices or reduce delivery availability, hurting the healthcare workers and service staff in my neighborhood who rely on affordable, accessible meal options during long shifts. I understand restaurants are squeezed by high fees, but in practice this cap will just shift costs around rather than solve the underlying problem, and the people who can least afford higher prices will end up paying more.",
+      "vote": "No",
+      "reason": "Capping fees at 15% will likely force restaurants to raise menu prices or reduce delivery availability, hurting the healthcare workers and service staff in my neighborhood who rely on affordable, accessible meal options during long shifts."
+    },
+    {
+      "agent_id": "agent-20",
+      "agent_name": "Darius Carter",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. Working in healthcare support, I see how these apps take advantage of small businesses and workers alike\u2014a 15% cap protects local restaurants from predatory fees while keeping delivery accessible for working people like me who need quick meal options on tight schedules. The restaurants in Richmond are already struggling with San Francisco costs, and if we let these tech companies keep charging 30% or more, we're just watching our neighborhood spots get squeezed out.",
+      "vote": "Yes",
+      "reason": "A 15% cap protects local restaurants from predatory fees while keeping delivery accessible for working people like me who need quick meal options on tight schedules."
+    },
+    {
+      "agent_id": "agent-21",
+      "agent_name": "Tane Mahina",
+      "response": "I'd vote No on the delivery app fee cap. Capping fees might sound good but could drive these services out of smaller neighborhoods like Chinatown where restaurants already operate on razor-thin margins and need every delivery option they can get. I see how these local businesses work day to day, and losing delivery platforms entirely would hurt them more than the current fees do.",
+      "vote": "No",
+      "reason": "Capping fees might sound good but could drive these services out of smaller neighborhoods like Chinatown where restaurants already operate on razor-thin margins and need every delivery option they can get."
+    },
+    {
+      "agent_id": "agent-22",
+      "agent_name": "Megan Yazzie",
+      "response": "I'd vote No on capping delivery app fees at 15%. I've seen too many small businesses in the Mission struggle with thin margins, and if a fee cap forces delivery apps to pass costs onto customers or cut service, it'll hurt both the restaurants and the people who depend on convenient food access in this expensive city. I get that the fees are high, but I worry more about unintended consequences\u2014higher delivery charges hitting customers, fewer delivery options, or restaurants losing online visibility altogether. In customer service, I've learned that when you cap one part of the equation, the pressure just shows up somewhere else, and in San Francisco's market, that usually means the people least able to absorb it end up paying.",
+      "vote": "No",
+      "reason": "I've seen too many small businesses in the Mission struggle with thin margins, and if a fee cap forces delivery apps to pass costs onto customers or cut service, it'll hurt both the restaurants and the people who depend on convenient food access in this expensive city."
+    },
+    {
+      "agent_id": "agent-23",
+      "agent_name": "Grace Liu",
+      "response": "Yes, I'd vote to cap food delivery app fees at 15%. On my income, every percentage point matters when I'm already stretching $18,650 a year for a household in one of the most expensive cities in the country. As someone working retail in Sunset, I know what it's like when small costs add up fast\u2014whether it's the occasional delivery after a long shift or just trying to make the budget work month to month. These apps have been charging whatever they want, and that hits people like me hardest. A 15% cap is reasonable protection without shutting down the service entirely.",
+      "vote": "Yes",
+      "reason": "I need those delivery fees capped because on my income, every percentage point matters when I'm already stretching $18,650 a year for a household in one of the most expensive cities in the country."
+    },
+    {
+      "agent_id": "agent-24",
+      "agent_name": "Peter Novak",
+      "response": "I'd vote No on capping delivery app fees at 15%. From my experience in real estate sales, I've learned that when you artificially cap what a business can charge, you often end up with fewer options or worse service\u2014restaurants might just leave the platforms entirely, drivers could see reduced pay, or we'd lose the convenience we're paying for. Price caps sound good on paper, but they tend to create unintended consequences that hurt the market and consumers over time.",
+      "vote": "No",
+      "reason": "Price caps tend to drive restaurants off the platforms or reduce service quality, and in my work I've seen how artificial constraints on business models create unintended market consequences that hurt consumers in the long run."
+    },
+    {
+      "agent_id": "agent-25",
+      "agent_name": "Keone Tui",
+      "response": "No. Capping fees might push delivery companies to cut services or raise prices on customers like me who are already stretched thin by San Francisco's cost of living. I get that restaurants are hurting from those commission rates, but as someone working maintenance and watching every dollar in this rental market, I worry the cost will just shift to higher delivery fees or fewer delivery options in Richmond\u2014and that hits working people harder than the app companies.",
+      "vote": "No",
+      "reason": "Capping fees might push delivery companies to cut services or raise prices on customers like me who are already stretched thin by San Francisco's cost of living."
+    },
+    {
+      "agent_id": "agent-26",
+      "agent_name": "Samir Haddad",
+      "response": "No. As someone who repairs tech for a living, I've seen how caps like this just push companies to cut service quality or raise prices elsewhere, and I'd rather keep the choice of whether to pay more for better delivery options instead of having the city decide what's fair for me.",
+      "vote": "No",
+      "reason": "As someone who repairs tech for a living, I've seen how caps like this just push companies to cut service quality or raise prices elsewhere, and I'd rather keep the choice of whether to pay more for better delivery options instead of having the city decide what's fair for me."
+    },
+    {
+      "agent_id": "agent-27",
+      "agent_name": "Monique Davis",
+      "response": "I'd vote No on capping delivery app fees at 15%. As someone who works in dispatch and logistics, I know that hard caps on service fees usually mean worse service, fewer drivers willing to work, and ultimately higher costs passed to customers in other ways. I've seen how these systems need flexibility to work\u2014when you squeeze margins too tight, the whole operation suffers and someone always ends up paying more, whether it's restaurants losing business, drivers leaving for better gigs, or customers facing higher menu prices and longer waits.",
+      "vote": "No",
+      "reason": "As someone who works in dispatch and logistics, I know that hard caps on service fees usually mean worse service, fewer drivers willing to work, and ultimately higher costs passed to customers in other ways."
+    },
+    {
+      "agent_id": "agent-28",
+      "agent_name": "Isabel Torres",
+      "response": "I'd vote No. Capping fees might help restaurants short-term but could drive up delivery costs or reduce service availability for working people like me who depend on these apps when long shifts don't leave time to cook. I get that restaurants are struggling with high commissions, but if the apps respond by raising prices or pulling back service in neighborhoods like Bayview, that just shifts the burden onto customers who are already stretched thin trying to make it work in this expensive city.",
+      "vote": "No",
+      "reason": "Capping fees might help restaurants short-term but could drive up delivery costs or reduce service availability for working people like me who depend on these apps when long shifts don't leave time to cook."
+    },
+    {
+      "agent_id": "agent-29",
+      "agent_name": "Carol Yazzie",
+      "response": "I'd vote No on the delivery app fee cap. Price caps sound helpful but often drive up the base menu prices or force restaurants to leave the platforms entirely, which would hurt the small family businesses in Chinatown that depend on delivery income. I've seen enough regulations backfire on the people they're supposed to help\u2014better to let restaurants negotiate their own arrangements than risk cutting off their customer base.",
+      "vote": "No",
+      "reason": "Price caps sound helpful but often drive up the base menu prices or force restaurants to leave the platforms entirely, which would hurt the small family businesses in Chinatown that depend on delivery income."
+    },
+    {
+      "agent_id": "agent-30",
+      "agent_name": "Rafael Santana",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. These apps already squeeze both the restaurants in my neighborhood and the delivery workers with high fees, and a 15% cap would help keep local businesses alive without shutting families like mine out of the occasional delivery we can barely afford. Living here in Mission on a tight budget, I see how these companies take advantage of everyone\u2014the small taquer\u00edas and mom-and-pop places that make this neighborhood what it is, the gig workers just trying to get by, and folks like me who sometimes need the convenience but can't ignore the markup. A cap isn't perfect, but it's a practical step to balance things out.",
+      "vote": "Yes",
+      "reason": "These apps already squeeze both the restaurants in my neighborhood and the delivery workers with high fees, and a 15% cap would help keep local businesses alive without shutting families like mine out of the occasional delivery we can barely afford."
+    }
+  ],
+  "summary": {
+    "vote_split": {
+      "yes": 11,
+      "no": 19,
+      "total": 30
+    },
+    "top_reasons": {
+      "yes": [
+        {
+          "reason": "Protecting restaurants and local businesses",
+          "count": 8,
+          "example": "I see restaurants in my neighborhood struggling with those high commission fees that cut into their already thin margins, and capping them would help local businesses survive in this expensive city."
+        },
+        {
+          "reason": "Limiting platform fees",
+          "count": 3,
+          "example": "Living on $10,400 a year means every delivery fee compounds the cost of food I can barely afford, and capping those charges would make occasional delivery orders actually possible for someone in my income bracket."
+        }
+      ],
+      "no": [
+        {
+          "reason": "Protecting restaurants and local businesses",
+          "count": 10,
+          "example": "Price caps often backfire by pushing platforms to cut service, raise consumer fees, or drop smaller restaurants entirely, and as someone comfortable enough to afford delivery I'd rather see real competition than artificial limits that might harm the neighborhood spots I actually use."
+        },
+        {
+          "reason": "Limiting platform fees",
+          "count": 9,
+          "example": "I'm concerned that capping fees at 15% will drive platforms to raise consumer prices or cut service availability in neighborhoods like Sunset, making delivery less accessible on the budget I already manage carefully."
+        }
+      ]
+    },
+    "most_interesting": {
+      "agent_id": "agent-30",
+      "agent_name": "Rafael Santana",
+      "response": "I'd vote Yes on capping delivery app fees at 15%. These apps already squeeze both the restaurants in my neighborhood and the delivery workers with high fees, and a 15% cap would help keep local businesses alive without shutting families like mine out of the occasional delivery we can barely afford. Living here in Mission on a tight budget, I see how these companies take advantage of everyone\u2014the small taquer\u00edas and mom-and-pop places that make this neighborhood what it is, the gig workers just trying to get by, and folks like me who sometimes need the convenience but can't ignore the markup. A cap isn't perfect, but it's a practical step to balance things out.",
+      "vote": "Yes",
+      "reason": "These apps already squeeze both the restaurants in my neighborhood and the delivery workers with high fees, and a 15% cap would help keep local businesses alive without shutting families like mine out of the occasional delivery we can barely afford.",
+      "why_interesting": "It stands out because it gives the most specific lived-context rationale and represents the Yes side."
+    }
+  }
+}

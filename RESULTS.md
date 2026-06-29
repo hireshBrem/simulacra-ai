@@ -37,4 +37,4 @@
 
 ## Voting Results
 
-Paste voting results here after running a behavioral scenario or experiment.
+![Voting results screenshot](screenshots/pic1.png)

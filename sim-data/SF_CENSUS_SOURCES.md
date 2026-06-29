@@ -1,6 +1,6 @@
 # San Francisco Resident Population Data Sources
 
-Generated 30 synthetic San Francisco resident Agents in `agent-1` through `agent-30`.
+Generated 30 San Francisco resident Agents in `agent-1` through `agent-30`.
 
 ## PUMS Microdata Used
 - U.S. Census Bureau ACS 2022 ACS 5-year PUMS API, state=06, San Francisco PUMA10 codes 07501-07504. Variables: SERIALNO, SPORDER, AGEP, SEX, RAC1P, HISP, OCCP, PINCP, HINCP, TEN, PWGTP, PUMA10.

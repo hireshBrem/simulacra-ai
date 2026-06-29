@@ -1,7 +1,7 @@
 {
   "sim_id": "sf-live",
-  "current_time": "2026-06-28 17:02",
-  "step_number": 2,
+  "current_time": "2026-06-28 17:07",
+  "step_number": 3,
   "tick_minutes": 5,
   "agents": {
     "agent-1": {
@@ -13,7 +13,7 @@
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 2
+      "last_active_step": 3
     },
     "agent-2": {
       "agent_id": "agent-2",
@@ -24,7 +24,7 @@
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 2
+      "last_active_step": 3
     },
     "agent-3": {
       "agent_id": "agent-3",
@@ -35,7 +35,7 @@
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 2
+      "last_active_step": 3
     },
     "agent-4": {
       "agent_id": "agent-4",
@@ -46,7 +46,7 @@
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 2
+      "last_active_step": 3
     },
     "agent-5": {
       "agent_id": "agent-5",
@@ -54,10 +54,10 @@
       "zone": "civic_market",
       "home_zone": "civic_market",
       "current_activity": "Rosa continues working through daily obligations at the civic market.",
-      "current_mood": "focused",
+      "current_mood": "neutral",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 2
+      "last_active_step": 3
     },
     "agent-6": {
       "agent_id": "agent-6",
@@ -68,29 +68,29 @@
       "current_mood": "Focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 1
+      "last_active_step": 3
     },
     "agent-7": {
       "agent_id": "agent-7",
       "name": "Tane Fale",
       "zone": "west_side",
       "home_zone": "west_side",
-      "current_activity": "I continue with my household responsibilities, focusing on the tasks at hand.",
+      "current_activity": "Tane Fale continues with household responsibilities, focusing on tasks at hand.",
       "current_mood": "focused",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 1
+      "last_active_step": 3
     },
     "agent-8": {
       "agent_id": "agent-8",
       "name": "Connor Wallace",
       "zone": "southeast",
       "home_zone": "southeast",
-      "current_activity": "I continue with my errands and household responsibilities.",
+      "current_activity": "I continue with my errands and household responsibilities in the southeast neighborhood.",
       "current_mood": "practical",
       "current_plan": [],
       "active_encounter_id": null,
-      "last_active_step": 1
+      "last_active_step": 3
     },
     "agent-9": {
       "agent_id": "agent-9",

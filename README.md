@@ -43,7 +43,7 @@ BEHAVIOR_MODEL=claude-sonnet-4-5-20250929
 Then install the frontend dependencies:
 
 ```bash
-cd ../frontend
+cd frontend
 npm install
 ```
 
@@ -76,7 +76,7 @@ http://localhost:8000/api
 
 ## Data And Logs
 
-The generated resident Agents live in `sim-data/agent-1` through `sim-data/agent-30`. Each Agent has:
+The resident Agents live in `sim-data/agent-1` through `sim-data/agent-30`. Each Agent has:
 
 - `ROLE.md`: stable identity, demographics, communication style, personality, beliefs, and behavioral constraints.
 - `MEMORY.md`: chronological Memory Stream for the Agent.
@@ -85,7 +85,7 @@ Persistent simulation state is stored in `sim-data/SIM_STATE.json`. Simulation a
 
 ## Data Sources Used
 
-The synthetic population is based on:
+The agent population is based on:
 
 - U.S. Census Bureau ACS 2022 ACS 5-year PUMS API.
 - California `state=06`.
@@ -98,8 +98,6 @@ Important caveats:
 - Names, exact neighborhoods, short life histories, and some narrative details are synthetic overlays.
 - Age, PUMA, race code, Hispanic-origin code, occupation code, person income, household income, tenure, and person weight come from sampled PUMS records.
 - OCEAN personality scores are synthetic but rule-derived from PUMS fields and broad context, not directly observed Census data.
-
-See `sim-data/SF_CENSUS_SOURCES.md` for the full source and derivation notes.
 
 ## How to use
 

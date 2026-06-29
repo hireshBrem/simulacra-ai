@@ -127,22 +127,34 @@ def _agent_sort_key(agent_id: str) -> tuple[int, str]:
 
 
 def _decide(agent_state: dict, perception: dict, query: str, memory_context: str, use_llm: bool) -> dict:
-    if use_llm and os.getenv("GROQ_API_KEY"):
-        try:
-            agent = load_agent(agent_state["agent_id"])
-            decision = run_simulation_decision(
-                agent=agent,
-                perception=query,
-                relevant_memories=memory_context,
-                valid_zones=list(ZONES.keys()),
-                nearby_agents=perception["nearby_agents"],
-                date=perception["current_time"].split()[0],
-            )
-            return _normalize_decision(agent_state, decision)
-        except Exception:
-            pass
+    if not use_llm:
+        return _fallback_decision(agent_state, perception)
 
-    return _fallback_decision(agent_state, perception)
+    if not os.getenv("GROQ_API_KEY"):
+        raise RuntimeError(
+            "GROQ_API_KEY is not set. Live simulation was started with use_llm=true, "
+            "so no fallback decision was used."
+        )
+
+    try:
+        agent = load_agent(agent_state["agent_id"])
+        decision = run_simulation_decision(
+            agent=agent,
+            perception=query,
+            relevant_memories=memory_context,
+            valid_zones=list(ZONES.keys()),
+            nearby_agents=perception["nearby_agents"],
+            date=perception["current_time"].split()[0],
+        )
+    except Exception as exc:
+        raise RuntimeError(
+            f"LLM simulation decision failed for {agent_state['agent_id']}: {exc}"
+        ) from exc
+
+    if not decision:
+        raise RuntimeError(f"LLM simulation decision returned no action for {agent_state['agent_id']}.")
+
+    return _normalize_decision(agent_state, decision)
 
 
 def _normalize_decision(agent_state: dict, decision: dict) -> dict:
@@ -347,28 +359,41 @@ def _advance_encounters(state: dict, use_llm: bool) -> list[dict]:
 
 
 def _conversation_turn(speaker_state: dict, listener_state: dict, encounter: dict, state: dict, use_llm: bool) -> dict:
-    if use_llm and os.getenv("GROQ_API_KEY"):
-        try:
-            speaker = load_agent(speaker_state["agent_id"])
-            situation = f"{speaker_state['name']} and {listener_state['name']} are talking in {encounter['zone']}. Topic: {encounter['topic']}"
-            return run_conversation_turn(
-                speaker=speaker,
-                listener_name=listener_state["name"],
-                situation=situation,
-                history=encounter["history"],
-                date=state["current_time"].split()[0],
-            )
-        except Exception:
-            pass
+    if not use_llm:
+        if encounter["history"]:
+            utterance = "That makes sense. From where I am in the city, I see it through my own work and neighborhood routines."
+        else:
+            utterance = "I noticed you here and wanted to ask how this is landing for you today."
+        return {
+            "internal_state": "I want to keep the conversation grounded and brief.",
+            "utterance": utterance,
+        }
 
-    if encounter["history"]:
-        utterance = f"That makes sense. From where I am in the city, I see it through my own work and neighborhood routines."
-    else:
-        utterance = f"I noticed you here and wanted to ask how this is landing for you today."
-    return {
-        "internal_state": "I want to keep the conversation grounded and brief.",
-        "utterance": utterance,
-    }
+    if not os.getenv("GROQ_API_KEY"):
+        raise RuntimeError(
+            "GROQ_API_KEY is not set. Live simulation was started with use_llm=true, "
+            "so no fallback conversation turn was used."
+        )
+
+    try:
+        speaker = load_agent(speaker_state["agent_id"])
+        situation = f"{speaker_state['name']} and {listener_state['name']} are talking in {encounter['zone']}. Topic: {encounter['topic']}"
+        result = run_conversation_turn(
+            speaker=speaker,
+            listener_name=listener_state["name"],
+            situation=situation,
+            history=encounter["history"],
+            date=state["current_time"].split()[0],
+        )
+    except Exception as exc:
+        raise RuntimeError(
+            f"LLM conversation turn failed for {speaker_state['agent_id']}: {exc}"
+        ) from exc
+
+    if not result.get("utterance"):
+        raise RuntimeError(f"LLM conversation turn returned no utterance for {speaker_state['agent_id']}.")
+
+    return result
 
 
 def _end_encounter(state: dict, encounter_id: str) -> list[dict]:

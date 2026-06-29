@@ -1,3 +1,4 @@
 .env
 .env.*
 CONTEXT.md
+.playwright-mcp/

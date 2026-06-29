@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from 'react'
 import { simBus } from '@/lib/simBus'
 import type { SimEvent } from '@/lib/simBus'
 
-const API = 'http://localhost:8000/api'
+const API = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8000/api'
 
 export function useSimStream() {
   const sourceRef = useRef<EventSource | null>(null)

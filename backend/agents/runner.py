@@ -334,9 +334,17 @@ def run_simulation_decision(
     return {}
 
 
-def run_behavioral_scenario(agent: Agent, prompt: str, response_mode: str, date: str) -> dict:
+def run_behavioral_scenario(
+    agent: Agent,
+    prompt: str,
+    response_mode: str,
+    date: str,
+    delivery_app_experiences: list[str] | None = None,
+) -> dict:
     """Ask one agent a reusable behavioral scenario question."""
     _require_behavior_client()
+    delivery_app_experiences = delivery_app_experiences or []
+    experience_context = _delivery_app_experience_context(delivery_app_experiences)
 
     if response_mode == "yes_no_reason":
         tool_name = "behavioral_yes_no_response"
@@ -358,7 +366,7 @@ def run_behavioral_scenario(agent: Agent, prompt: str, response_mode: str, date:
 
     messages = [
         {"role": "system", "content": _build_system_prompt(agent, date)},
-        {"role": "user", "content": f"{mode_instruction}\n\nScenario prompt:\n{prompt}"}
+        {"role": "user", "content": f"{mode_instruction}{experience_context}\n\nScenario prompt:\n{prompt}"}
     ]
 
     try:
@@ -375,7 +383,30 @@ def run_behavioral_scenario(agent: Agent, prompt: str, response_mode: str, date:
     except Exception:
         pass
 
-    return _run_behavioral_scenario_json_fallback(agent, prompt, response_mode, date, mode_instruction)
+    return _run_behavioral_scenario_json_fallback(
+        agent,
+        prompt,
+        response_mode,
+        date,
+        mode_instruction,
+        experience_context,
+    )
+
+
+def _delivery_app_experience_context(delivery_app_experiences: list[str]) -> str:
+    if not delivery_app_experiences:
+        return ""
+    experiences = "\n".join(
+        f"{index}. {experience}"
+        for index, experience in enumerate(delivery_app_experiences, start=1)
+    )
+    return (
+        "\n\nPast delivery-app experiences:\n"
+        f"{experiences}\n\n"
+        "Treat these as lived memories from your own past. Let them influence your vote "
+        "alongside your Role, Memory Stream, demographics, neighborhood, household economics, "
+        "and OCEAN profile."
+    )
 
 
 def _run_behavioral_scenario_json_fallback(
@@ -384,6 +415,7 @@ def _run_behavioral_scenario_json_fallback(
     response_mode: str,
     date: str,
     mode_instruction: str,
+    experience_context: str,
 ) -> dict:
     try:
         return _run_behavioral_scenario_json_mode(
@@ -392,6 +424,7 @@ def _run_behavioral_scenario_json_fallback(
             response_mode,
             date,
             mode_instruction,
+            experience_context,
         )
     except Exception:
         return _run_behavioral_scenario_labeled_text(
@@ -400,6 +433,7 @@ def _run_behavioral_scenario_json_fallback(
             response_mode,
             date,
             mode_instruction,
+            experience_context,
         )
 
 
@@ -409,11 +443,12 @@ def _run_behavioral_scenario_json_mode(
     response_mode: str,
     date: str,
     mode_instruction: str,
+    experience_context: str,
 ) -> dict:
     output_instruction = _behavioral_json_instruction(response_mode)
     content = _run_anthropic_text(
         system=_build_system_prompt(agent, date),
-        user=f"{mode_instruction}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
+        user=f"{mode_instruction}{experience_context}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
         max_tokens=700,
     )
     return _behavioral_result_from_json(content or "{}", response_mode)
@@ -425,6 +460,7 @@ def _run_behavioral_scenario_labeled_text(
     response_mode: str,
     date: str,
     mode_instruction: str,
+    experience_context: str,
 ) -> dict:
     if response_mode == "yes_no_reason":
         output_instruction = (
@@ -443,7 +479,7 @@ def _run_behavioral_scenario_labeled_text(
 
     content = _run_anthropic_text(
         system=_build_system_prompt(agent, date),
-        user=f"{mode_instruction}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
+        user=f"{mode_instruction}{experience_context}\n\n{output_instruction}\n\nScenario prompt:\n{prompt}",
         max_tokens=700,
     )
     return _parse_labeled_behavioral_response(content, response_mode)

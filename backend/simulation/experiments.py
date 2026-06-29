@@ -12,6 +12,12 @@ from agents.loader import Agent, load_all_agents
 from agents.runner import run_behavioral_scenario
 
 SIM_LOGS_PATH = Path(os.getenv("SIM_LOGS_PATH", "../sim-logs"))
+DELIVERY_APP_EXPERIENCES_PATH = Path(
+    os.getenv(
+        "DELIVERY_APP_EXPERIENCES_PATH",
+        Path(__file__).resolve().parents[1] / "delivery_app_experiences.json",
+    )
+)
 
 PROP_X_TITLE = "Prop X delivery fee cap"
 PROP_X_PROMPT = (
@@ -42,13 +48,43 @@ def default_behavioral_scenario() -> dict:
     }
 
 
-def build_agent_scenario_response(agent: Agent, prompt: str, response_mode: str, date: str) -> dict:
-    result = run_behavioral_scenario(agent, prompt, response_mode, date)
+def load_delivery_app_experiences() -> dict[str, list[str]]:
+    data = json.loads(DELIVERY_APP_EXPERIENCES_PATH.read_text())
+    experiences: dict[str, list[str]] = {}
+    for item in data:
+        agent_id = str(item.get("agent_id", ""))
+        agent_experiences = item.get("experiences", [])
+        if agent_id and isinstance(agent_experiences, list):
+            experiences[agent_id] = [str(experience) for experience in agent_experiences[:3]]
+    return experiences
+
+
+def delivery_app_experience_lookup(enabled: bool) -> dict[str, list[str]]:
+    return load_delivery_app_experiences() if enabled else {}
+
+
+def build_agent_scenario_response(
+    agent: Agent,
+    prompt: str,
+    response_mode: str,
+    date: str,
+    delivery_app_experiences: list[str] | None = None,
+) -> dict:
+    delivery_app_experiences = delivery_app_experiences or []
+    result = run_behavioral_scenario(
+        agent,
+        prompt,
+        response_mode,
+        date,
+        delivery_app_experiences=delivery_app_experiences,
+    )
     response = {
         "agent_id": agent.agent_id,
         "agent_name": agent.name,
         "response": result.get("response", ""),
     }
+    if delivery_app_experiences:
+        response["delivery_app_experiences"] = delivery_app_experiences
     if response_mode == "yes_no_reason":
         response["vote"] = _normalize_vote(result.get("vote", ""))
         response["reason"] = _one_line(result.get("reason", ""))
@@ -61,6 +97,7 @@ def run_behavioral_scenario_experiment(
     title: str | None = None,
     prompt: str | None = None,
     response_mode: str = "yes_no_reason",
+    use_delivery_app_experiences: bool = False,
 ) -> dict:
     if response_mode not in VALID_RESPONSE_MODES:
         raise ValueError(f"Unsupported response_mode: {response_mode}")
@@ -70,9 +107,16 @@ def run_behavioral_scenario_experiment(
     prompt = prompt or scenario["prompt"]
     date = datetime.now().strftime("%Y-%m-%d")
     experiment_id = str(uuid.uuid4())[:8]
+    experience_lookup = delivery_app_experience_lookup(use_delivery_app_experiences)
 
     responses = [
-        build_agent_scenario_response(agent, prompt, response_mode, date)
+        build_agent_scenario_response(
+            agent,
+            prompt,
+            response_mode,
+            date,
+            experience_lookup.get(agent.agent_id, []),
+        )
         for agent in load_all_agents()
     ]
 
@@ -83,6 +127,7 @@ def run_behavioral_scenario_experiment(
         "title": title,
         "prompt": prompt,
         "response_mode": response_mode,
+        "use_delivery_app_experiences": use_delivery_app_experiences,
         "responses": responses,
         "summary": summarize_behavioral_scenario(responses, response_mode),
     }

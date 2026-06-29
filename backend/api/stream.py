@@ -17,6 +17,7 @@ from simulation.experiments import (
     VALID_RESPONSE_MODES,
     build_agent_scenario_response,
     default_behavioral_scenario,
+    delivery_app_experience_lookup,
     save_behavioral_scenario_log,
     summarize_behavioral_scenario,
 )
@@ -171,6 +172,7 @@ async def _behavioral_scenario_stream(
     title: str | None,
     prompt: str | None,
     response_mode: str,
+    use_delivery_app_experiences: bool,
 ):
     if response_mode not in VALID_RESPONSE_MODES:
         yield _event({"type": "error", "message": f"Unsupported response_mode: {response_mode}"})
@@ -181,6 +183,7 @@ async def _behavioral_scenario_stream(
     prompt = prompt or scenario["prompt"]
     date = datetime.now().strftime("%Y-%m-%d")
     experiment_id = str(uuid.uuid4())[:8]
+    experience_lookup = delivery_app_experience_lookup(use_delivery_app_experiences)
 
     yield _event({
         "type": "behavioral_scenario_started",
@@ -188,6 +191,7 @@ async def _behavioral_scenario_stream(
         "title": title,
         "prompt": prompt,
         "response_mode": response_mode,
+        "use_delivery_app_experiences": use_delivery_app_experiences,
     })
 
     responses: list[dict] = []
@@ -199,6 +203,7 @@ async def _behavioral_scenario_stream(
                 prompt,
                 response_mode,
                 date,
+                experience_lookup.get(agent.agent_id, []),
             )
             responses.append(response)
             yield _event({
@@ -215,6 +220,7 @@ async def _behavioral_scenario_stream(
             "title": title,
             "prompt": prompt,
             "response_mode": response_mode,
+            "use_delivery_app_experiences": use_delivery_app_experiences,
             "responses": responses,
             "summary": summary,
         }
@@ -258,9 +264,10 @@ async def stream_behavioral_scenario(
     title: str | None = None,
     prompt: str | None = None,
     response_mode: str = "yes_no_reason",
+    use_delivery_app_experiences: bool = False,
 ):
     return StreamingResponse(
-        _behavioral_scenario_stream(title, prompt, response_mode),
+        _behavioral_scenario_stream(title, prompt, response_mode, use_delivery_app_experiences),
         media_type="text/event-stream",
         headers=_SSE_HEADERS,
     )

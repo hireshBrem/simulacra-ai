@@ -54,5 +54,7 @@ Results show that the experiment achieved: 43% No. The delta is 17%. A few thing
 
 ![Voting results screenshot 3](screenshots/pic3.png)
 
-Voting results broken down by neighbourhood and income:
+**Voting results with agent memory: each agent has 3 past experiences with delivery apps that influence their vote:**
+
+![Voting results screenshot 4](screenshots/pic4.png)
 

@@ -14,7 +14,12 @@ type BreakdownMode = 'neighborhood' | 'income'
 
 interface BehavioralScenariosProps {
   isRunning: boolean
-  onRun: (title: string, prompt: string, responseMode: ResponseMode) => void
+  onRun: (
+    title: string,
+    prompt: string,
+    responseMode: ResponseMode,
+    useDeliveryAppExperiences: boolean,
+  ) => void
   onStop: () => void
 }
 
@@ -39,6 +44,7 @@ export default function BehavioralScenarios({
   const [status, setStatus] = useState('Ready')
   const [activeResponseMode, setActiveResponseMode] = useState<ResponseMode>('yes_no_reason')
   const [breakdownMode, setBreakdownMode] = useState<BreakdownMode>('neighborhood')
+  const [useDeliveryAppExperiences, setUseDeliveryAppExperiences] = useState(false)
 
   useEffect(() => {
     const handler = (event: SimEvent) => {
@@ -60,6 +66,7 @@ export default function BehavioralScenarios({
             response: event.response,
             vote: event.vote,
             reason: event.reason,
+            delivery_app_experiences: event.delivery_app_experiences,
           }])
           setStatus(`${event.agent_name} responded`)
           break
@@ -106,10 +113,19 @@ export default function BehavioralScenarios({
     [breakdownMode, sortedResponses],
   )
   const shouldShowVoteBreakdown = activeResponseMode === 'yes_no_reason' && (activeExperimentId || responses.length > 0)
+  const responsesWithDeliveryExperiences = useMemo(
+    () => sortedResponses.filter(response => response.delivery_app_experiences?.length),
+    [sortedResponses],
+  )
 
   const handleRun = () => {
     if (runDisabled) return
-    onRun(title.trim() || 'Behavioral scenario', prompt.trim(), responseMode)
+    onRun(
+      title.trim() || 'Behavioral scenario',
+      prompt.trim(),
+      responseMode,
+      useDeliveryAppExperiences,
+    )
   }
 
   return (
@@ -179,6 +195,35 @@ export default function BehavioralScenarios({
               ].join(' ')}
             >
               Freeform
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setUseDeliveryAppExperiences(value => !value)}
+              aria-pressed={useDeliveryAppExperiences}
+              className={[
+                'flex items-center gap-2 border px-3 py-2 text-xs',
+                useDeliveryAppExperiences
+                  ? 'border-cyan-400 bg-cyan-400/15 text-cyan-100'
+                  : 'border-slate-700 text-slate-400 hover:bg-slate-800',
+              ].join(' ')}
+            >
+              <span
+                className={[
+                  'relative h-3 w-6 border transition-colors',
+                  useDeliveryAppExperiences
+                    ? 'border-cyan-300 bg-cyan-300/30'
+                    : 'border-slate-600 bg-black',
+                ].join(' ')}
+              >
+                <span
+                  className={[
+                    'absolute top-0.5 h-1.5 w-1.5 bg-current transition-transform',
+                    useDeliveryAppExperiences ? 'translate-x-3.5' : 'translate-x-0.5',
+                  ].join(' ')}
+                />
+              </span>
+              Past experiences
             </button>
 
             <button
@@ -274,7 +319,63 @@ export default function BehavioralScenarios({
           rows={voteBreakdown}
         />
       )}
+
+      {shouldShowVoteBreakdown && responsesWithDeliveryExperiences.length > 0 && (
+        <DeliveryExperiencePanel responses={responsesWithDeliveryExperiences} />
+      )}
     </section>
+  )
+}
+
+function DeliveryExperiencePanel({
+  responses,
+}: {
+  responses: BehavioralScenarioResponse[]
+}) {
+  return (
+    <div className="mt-4 border border-cyan-500/30 bg-[#050a0d] px-3 py-3">
+      <div className="border-b border-slate-800 pb-2">
+        <div className="text-sm text-slate-200">Delivery App Memories</div>
+        <div className="mt-1 text-xs text-slate-500">
+          Past experiences included in each agent&apos;s voting context
+        </div>
+      </div>
+
+      <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+        {responses.map(response => (
+          <DeliveryExperienceItem key={response.agent_id} response={response} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function DeliveryExperienceItem({ response }: { response: BehavioralScenarioResponse }) {
+  const voteClass = response.vote === 'Yes'
+    ? 'border-emerald-500/50 text-emerald-200'
+    : response.vote === 'No'
+      ? 'border-red-500/50 text-red-200'
+      : 'border-slate-700 text-slate-400'
+
+  return (
+    <div className="border border-slate-800 bg-black/40 px-3 py-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 truncate text-sm text-slate-200">{response.agent_name}</div>
+        {response.vote && (
+          <div className={`shrink-0 border px-2 py-1 text-xs ${voteClass}`}>
+            {response.vote}
+          </div>
+        )}
+      </div>
+      <ol className="mt-2 space-y-1 text-xs leading-4 text-slate-500">
+        {(response.delivery_app_experiences ?? []).slice(0, 3).map((experience, index) => (
+          <li key={`${response.agent_id}-experience-${index}`} className="grid grid-cols-[1rem_minmax(0,1fr)] gap-1">
+            <span className="text-slate-700">{index + 1}.</span>
+            <span>{experience}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
   )
 }
 

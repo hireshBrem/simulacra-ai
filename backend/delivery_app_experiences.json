@@ -1,0 +1,242 @@
+[
+  {
+    "agent_id": "agent-1",
+    "experiences": [
+      "A late-night DoorDash order in the Sunset arrived cold after the driver had to make several stacked stops.",
+      "A favorite neighborhood restaurant told him app commissions made small delivery orders barely worth accepting.",
+      "Uber Eats was useful during a long work sprint, but the final price felt much higher than the menu price."
+    ]
+  },
+  {
+    "agent_id": "agent-2",
+    "experiences": [
+      "A delivery app cancelled his Excelsior dinner order after forty minutes because no driver accepted the trip.",
+      "He noticed service fees and small-order fees often made a simple meal cost almost twice as much.",
+      "A Korean restaurant he likes asked customers to order directly because app commissions were hurting margins."
+    ]
+  },
+  {
+    "agent_id": "agent-3",
+    "experiences": [
+      "During a demanding work week, delivery apps helped him avoid losing time to meal pickup.",
+      "A Mission restaurant included a note asking regulars to call directly because platform fees were too high.",
+      "He once paid extra for priority delivery and still received food later than the estimate."
+    ]
+  },
+  {
+    "agent_id": "agent-4",
+    "experiences": [
+      "She relied on Uber Eats during a software release week and valued the convenience despite the cost.",
+      "A Nob Hill order arrived missing items, and the app refund process felt automated and impersonal.",
+      "She has seen delivery promotions disappear after fees and taxes were added at checkout."
+    ]
+  },
+  {
+    "agent_id": "agent-5",
+    "experiences": [
+      "A Haight cafe owner told him delivery app commissions cut deeply into already thin operating margins.",
+      "He used DoorDash for a team lunch and was surprised by how much the restaurant prices were marked up.",
+      "A delayed delivery forced him to reorder food directly from a nearby restaurant before an evening shift."
+    ]
+  },
+  {
+    "agent_id": "agent-6",
+    "experiences": [
+      "As a food service manager, he has watched restaurants raise app menu prices to cover platform commissions.",
+      "He has seen delivery orders disrupt kitchen timing during busy service without bringing much profit.",
+      "He appreciates that apps bring incremental customers, but he worries the platform terms change without warning."
+    ]
+  },
+  {
+    "agent_id": "agent-7",
+    "experiences": [
+      "He ordered delivery after a retail shift and felt frustrated when fees made a cheap meal unaffordable.",
+      "A Richmond restaurant he likes offered a discount for pickup because app fees were too steep.",
+      "He once split an app order with coworkers because delivery was only affordable when shared."
+    ]
+  },
+  {
+    "agent_id": "agent-8",
+    "experiences": [
+      "He uses delivery apps occasionally when work runs late and values predictable access to many restaurants.",
+      "A Portola order took much longer than estimated because the driver came from across town.",
+      "He has compared app prices with direct ordering and noticed restaurants often charge more on platforms."
+    ]
+  },
+  {
+    "agent_id": "agent-9",
+    "experiences": [
+      "On a tight budget, he abandoned several delivery orders after fees made the total too high.",
+      "A Mission taqueria he visits asked customers to avoid apps because commissions were hard on the business.",
+      "He appreciated delivery during a rainy week but felt guilty that the driver seemed rushed and underpaid."
+    ]
+  },
+  {
+    "agent_id": "agent-10",
+    "experiences": [
+      "A client family mentioned relying on delivery apps when work schedules made grocery shopping difficult.",
+      "He has seen North Beach restaurants encourage direct ordering to avoid platform fees.",
+      "He once used an app while sick and valued the access, but the fees made it feel like a luxury."
+    ]
+  },
+  {
+    "agent_id": "agent-11",
+    "experiences": [
+      "He stopped using a delivery app mid-checkout after the fees pushed a modest meal beyond his budget.",
+      "A Sunset restaurant included a flyer asking customers to order through its own website instead.",
+      "He once received someone else's order and spent too much time navigating app support for a refund."
+    ]
+  },
+  {
+    "agent_id": "agent-12",
+    "experiences": [
+      "A Bayview family she knows used delivery while caring for a sick child, but the cost was a strain.",
+      "A local restaurant owner told her app fees made it harder to keep prices reasonable for neighbors.",
+      "She has ordered delivery after school events and noticed the driver seemed pressured by tight timing."
+    ]
+  },
+  {
+    "agent_id": "agent-13",
+    "experiences": [
+      "He has watched Chinatown restaurants ask regulars to call directly because delivery app fees erode revenue.",
+      "A delivery order was convenient during a rainy evening, but he felt the neighborhood restaurant got the worse deal.",
+      "He once received a cold meal after a driver handled multiple app orders at once."
+    ]
+  },
+  {
+    "agent_id": "agent-14",
+    "experiences": [
+      "He rarely uses delivery because app fees make food feel too expensive on his budget.",
+      "A Bayview restaurant he likes posted a sign saying direct orders help them avoid commission fees.",
+      "When he did order during bad weather, the delivery charge and tip made him reconsider using the app again."
+    ]
+  },
+  {
+    "agent_id": "agent-15",
+    "experiences": [
+      "He ordered food during a long medical records shift and appreciated not having to leave work.",
+      "A Mission restaurant told him delivery app orders were useful but expensive for the business.",
+      "He noticed app menu prices were higher than the same items listed for pickup."
+    ]
+  },
+  {
+    "agent_id": "agent-16",
+    "experiences": [
+      "After a nursing shift, delivery apps helped her get dinner when she was too tired to cook.",
+      "She has seen patients and families rely on delivery when mobility or caregiving made pickup difficult.",
+      "A Sunset restaurant she supports asked customers to order directly because app fees were squeezing them."
+    ]
+  },
+  {
+    "agent_id": "agent-17",
+    "experiences": [
+      "As a food service worker, she has seen app commissions make delivery orders less profitable than walk-ins.",
+      "She once ordered after a late shift and felt the fees were high for someone earning hourly wages.",
+      "A driver told her the delivery payout seemed low after parking and waiting time."
+    ]
+  },
+  {
+    "agent_id": "agent-18",
+    "experiences": [
+      "He used delivery during a busy week and valued having Excelsior restaurants available at home.",
+      "A restaurant owner said app visibility brought customers but the commission structure was painful.",
+      "He has noticed some nearby restaurants left apps or limited their delivery menus."
+    ]
+  },
+  {
+    "agent_id": "agent-19",
+    "experiences": [
+      "She has seen Tenderloin neighbors use delivery when health or safety concerns made going out difficult.",
+      "A local eatery told her direct orders mattered because platform fees reduced what they kept.",
+      "She once had a delivery cancelled after a long wait and had to make another plan for dinner."
+    ]
+  },
+  {
+    "agent_id": "agent-20",
+    "experiences": [
+      "After a healthcare support shift, he used DoorDash for convenience but disliked the final total.",
+      "A Richmond restaurant included a note saying app commissions were hurting small local businesses.",
+      "He has seen delivery drivers struggle with parking and rushed pickups near busy streets."
+    ]
+  },
+  {
+    "agent_id": "agent-21",
+    "experiences": [
+      "He ordered lunch through an app at work and noticed the fees made it harder to justify.",
+      "A Chinatown restaurant he visits encouraged phone orders to avoid high platform commissions.",
+      "A delivery once arrived late because the driver had multiple orders across different neighborhoods."
+    ]
+  },
+  {
+    "agent_id": "agent-22",
+    "experiences": [
+      "She handled customer complaints about delayed app deliveries while working in service.",
+      "A Mission restaurant owner told her delivery apps helped exposure but took too large a cut.",
+      "She has abandoned orders at checkout when fees made dinner too expensive."
+    ]
+  },
+  {
+    "agent_id": "agent-23",
+    "experiences": [
+      "She rarely orders delivery because app fees are hard to manage on her income.",
+      "A Sunset restaurant she likes offered cheaper prices for direct pickup than app delivery.",
+      "She once used a promotion, but taxes, fees, and tip still made the order feel costly."
+    ]
+  },
+  {
+    "agent_id": "agent-24",
+    "experiences": [
+      "He values delivery apps when meetings run late and expects service availability across the city.",
+      "A Portola restaurant owner said app orders brought volume but the commission was frustrating.",
+      "He has seen some restaurants increase app prices, making him wonder who really pays the fees."
+    ]
+  },
+  {
+    "agent_id": "agent-25",
+    "experiences": [
+      "He ordered after maintenance work and was annoyed that fees made a simple meal expensive.",
+      "A Richmond restaurant he knows asked customers to call directly because app fees were high.",
+      "He once waited outside to help a driver find the building after the app sent them to the wrong entrance."
+    ]
+  },
+  {
+    "agent_id": "agent-26",
+    "experiences": [
+      "He used delivery while repairing equipment late and appreciated the time saved.",
+      "A Mission restaurant told him app fees meant they had to raise prices online.",
+      "He once had an app order arrive cold after the driver made several stops."
+    ]
+  },
+  {
+    "agent_id": "agent-27",
+    "experiences": [
+      "Her logistics work makes her notice how delivery apps shift pressure onto drivers and dispatch timing.",
+      "A North Beach restaurant she likes pushed direct ordering to avoid commission fees.",
+      "She has used delivery during busy weeks but worries the convenience hides labor and platform costs."
+    ]
+  },
+  {
+    "agent_id": "agent-28",
+    "experiences": [
+      "She ordered delivery for her household after a production shift and found the total hard to justify.",
+      "A Bayview restaurant owner said app fees made it difficult to keep prices fair for families.",
+      "A driver once apologized for a late order because the app stacked too many deliveries."
+    ]
+  },
+  {
+    "agent_id": "agent-29",
+    "experiences": [
+      "She used delivery when bad weather made errands difficult, but the fees felt excessive.",
+      "A Chinatown restaurant she has known for years asked regulars to order directly to avoid app commissions.",
+      "She once received a delayed order and worried older residents might have fewer reliable options."
+    ]
+  },
+  {
+    "agent_id": "agent-30",
+    "experiences": [
+      "On a limited income, he often decides against delivery once the app adds fees and tip.",
+      "A Mission restaurant he likes said app commissions make it harder to serve affordable meals.",
+      "He appreciated delivery when mobility was an issue, but the cost made it feel unsustainable."
+    ]
+  }
+]

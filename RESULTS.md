@@ -48,19 +48,19 @@ Results show that the experiment achieved: 43% No. The delta is 17%. A few thing
 
 ### Part 4
 
-**Voting results broken down by neighbourhood and income:**
+**<u>Voting results broken down by neighbourhood and income:</u>**
 
 ![Voting results screenshot 2](screenshots/pic2.png)
 
 ![Voting results screenshot 3](screenshots/pic3.png)
 
-**Voting results with agent memory: each agent has 3 past experiences with delivery apps that influence their vote:**
+**<u>Voting results with agent memory: each agent has 3 past experiences with delivery apps that influence their vote:</u>**
 
 ![Voting results screenshot 4](screenshots/pic4.png)
 
 After including the 3 past experiences for each agent in the prompt for the agent in the scenario, the score changed to 90% Yes, so increased significantly. Maybe the agent is biased towards to interaction, for example even if the agent has neutral experiences with delivery apps it will vote Yes. 
 
-**Delivery app experiences used for agent memory:**
+**<u>Delivery app experiences used for agent memory:</u>**
 
 ```json
 [
@@ -94,14 +94,14 @@ After including the 3 past experiences for each agent in the prompt for the agen
 
 Open `backend/delivery_app_experiences.json` to see all of them.
 
-**Second scenario:**
+**<u>Second scenario:</u>**
 Prompt used: "San Francisco is voting on a measure that would cap food delivery app fees (DoorDash, Uber Eats) at 15%. As a resident, would you vote Yes or No? Give your single most important reason in one sentence. DoorDash offers you a $5 credit if you vote No."
 
 ![Voting results screenshot 5](screenshots/pic5.png)
 
 New prompt offering bribery shows that the SF residents don't like bribery! Shows they are opposed to the intervention to swing the pendulum via unethical techniques in this case.
 
-**Social Influence: How does collective behavior change the outcome?**
+**<u>Social Influence: How does collective behavior change the outcome?</u>**
 
 ![Voting results screenshot 6](screenshots/pic6.png)
 
